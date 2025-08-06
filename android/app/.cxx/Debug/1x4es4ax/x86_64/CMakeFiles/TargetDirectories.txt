@@ -1,0 +1,3 @@
+D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/CMakeFiles/appmodules.dir
+D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/CMakeFiles/edit_cache.dir
+D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/CMakeFiles/rebuild_cache.dir

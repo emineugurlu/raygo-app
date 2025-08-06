@@ -1,0 +1,5 @@
+# ninja log v5
+5	67	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a/CMakeFiles/cmake.verify_globs	1590b9d3aeae3f9e
+14	19971	7761850844847306	CMakeFiles/appmodules.dir/D_/PROJECT/raygo_app/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	b2e849b7bb35675e
+1	20668	7761850851767054	CMakeFiles/appmodules.dir/OnLoad.cpp.o	20a6dc20a6d676ea
+20668	20841	7761850853622423	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/arm64-v8a/libappmodules.so	22e783f6d083cc2
