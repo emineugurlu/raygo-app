@@ -1,4 +1,3 @@
-// src/screens/Onboarding1.tsx
 import React from 'react';
 import {
   SafeAreaView,
@@ -40,7 +39,7 @@ export default function Onboarding1({ navigation }: Props) {
         <TouchableOpacity
           style={styles.button}
           activeOpacity={0.7}
-          onPress={() => navigation.navigate('Onboarding2')}
+          onPress={() => navigation.navigate('Onboarding2')} // 👈 GEÇİŞ BURADA!
         >
           <Text style={styles.buttonText}>
             Devam Et

@@ -32,14 +32,13 @@ export default function Onboarding2({ navigation }: Props) {
           style={styles.logo}
         />
         <Image
-          source={require('../../assets/karşılama-turu-resim-1.png')} // Görsel yolunu ayarla!
+          source={require('../../assets/karşılama-turu-resim-1.png')} // Görsel yolunu kendi dosya adına göre düzelt!
           style={styles.image}
         />
         <Text style={styles.title}>
           Ulaşım artık daha hızlı ve akıllı.
         </Text>
         <View style={styles.indicator}>
-          <View style={[styles.dot, styles.dotInactive]} />
           <View style={[styles.dot, styles.dotActive]} />
           <View style={[styles.dot, styles.dotInactive]} />
           <View style={[styles.dot, styles.dotInactive]} />
@@ -90,16 +89,16 @@ const styles = StyleSheet.create<Styles>({
     paddingHorizontal: 20
   },
   logo: {
-    width: 120,
-    height: 48,
+    width: 280,
+    height: 120,
     resizeMode: 'contain',
-    marginBottom: 24
+    marginBottom: 32,
   },
   image: {
-    width: 200,
-    height: 150,
+    width: 420,
+    height: 340,
     resizeMode: 'contain',
-    marginBottom: 36
+    marginBottom: 40,
   },
   title: {
     fontSize: FONT_SIZES.title,
