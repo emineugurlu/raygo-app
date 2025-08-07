@@ -6,11 +6,19 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  ImageStyle,
+  ViewStyle,
+  TextStyle
 } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigation/AppNavigator';
-import { COLORS, FONTS, FONT_SIZES } from '../constants/Styles';
+import {
+  COLORS,
+  FONTS,
+  FONT_SIZES,
+  FONT_WEIGHTS
+} from '../constants/Styles';
 
 type Props = {
   navigation: StackNavigationProp<RootStackParamList, 'Onboarding1'>;
@@ -34,14 +42,28 @@ export default function Onboarding1({ navigation }: Props) {
           activeOpacity={0.7}
           onPress={() => navigation.navigate('Onboarding2')}
         >
-          <Text style={styles.buttonText}>Devam Et {'\u2192'}</Text>
+          <Text style={styles.buttonText}>
+            Devam Et
+            <Text style={styles.arrow}> →</Text>
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
+type Styles = {
+  container: ViewStyle;
+  content: ViewStyle;
+  image: ImageStyle;
+  title: TextStyle;
+  footer: ViewStyle;
+  button: ViewStyle;
+  buttonText: TextStyle;
+  arrow: TextStyle;
+};
+
+const styles = StyleSheet.create<Styles>({
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
@@ -73,11 +95,21 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.button,
     paddingVertical: 15,
     borderRadius: 30,
+    flexDirection: 'row',
+    justifyContent: 'center',
     alignItems: 'center'
   },
   buttonText: {
-    color: '#FFFFFF',
+    color: COLORS.white,
     fontSize: FONT_SIZES.title,
-    fontFamily: FONTS.bold
+    fontFamily: FONTS.bold,
+    fontWeight: FONT_WEIGHTS.bold
+  },
+  arrow: {
+    fontSize: FONT_SIZES.arrow,
+    fontFamily: FONTS.bold,
+    color: COLORS.white,
+    fontWeight: FONT_WEIGHTS.extraBold,
+    marginLeft: 8
   }
 });
