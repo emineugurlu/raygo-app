@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "x86_64"
+			"value" : "x86"
 		},
 		{
 			"name" : "ANDROID_NDK",
@@ -99,7 +99,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "x86_64"
+			"value" : "x86"
 		},
 		{
 			"name" : "CMAKE_ANDROID_NDK",
@@ -187,7 +187,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64"
+			"value" : "d:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -260,22 +260,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "C:/Users/ugurl/AppData/Local/Android/Sdk/cmake/3.22.1/bin/ctest.exe"
-		},
-		{
-			"name" : "CMAKE_CXX_COMPILER",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -404,22 +388,6 @@
 			],
 			"type" : "STRING",
 			"value" : "-latomic -lm"
-		},
-		{
-			"name" : "CMAKE_C_COMPILER",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -691,7 +659,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "D:\\PROJECT\\raygo_app\\android\\app\\.cxx\\Debug\\1x4es4ax\\prefab\\x86_64\\prefab"
+			"value" : "D:\\PROJECT\\raygo_app\\android\\app\\.cxx\\Debug\\1x4es4ax\\prefab\\x86\\prefab"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -787,7 +755,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "D:\\PROJECT\\raygo_app\\android\\app\\build\\intermediates\\cxx\\Debug\\1x4es4ax\\obj\\x86_64"
+			"value" : "D:\\PROJECT\\raygo_app\\android\\app\\build\\intermediates\\cxx\\Debug\\1x4es4ax\\obj\\x86"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1059,7 +1027,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "D:\\PROJECT\\raygo_app\\android\\app\\build\\intermediates\\cxx\\Debug\\1x4es4ax\\obj\\x86_64"
+			"value" : "D:\\PROJECT\\raygo_app\\android\\app\\build\\intermediates\\cxx\\Debug\\1x4es4ax\\obj\\x86"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1299,11 +1267,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "The CMake toolchain file"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "C:/Users/ugurl/AppData/Local/Android/Sdk/ndk/27.1.12297006/build/cmake/android.toolchain.cmake"
+			"type" : "UNINITIALIZED",
+			"value" : "C:\\Users\\ugurl\\AppData\\Local\\Android\\Sdk\\ndk\\27.1.12297006\\build\\cmake\\android.toolchain.cmake"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1367,7 +1335,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/ReactAndroid"
+			"value" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/prefab/x86/prefab/lib/i686-linux-android/cmake/ReactAndroid"
 		},
 		{
 			"name" : "appmodules_BINARY_DIR",
@@ -1379,7 +1347,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64"
+			"value" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86"
 		},
 		{
 			"name" : "appmodules_IS_TOP_LEVEL",
@@ -1415,7 +1383,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/fbjni"
+			"value" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/prefab/x86/prefab/lib/i686-linux-android/cmake/fbjni"
 		}
 	],
 	"kind" : "cache",

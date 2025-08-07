@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/x86_64/libappmodules.so"
+			"path" : "D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/arm64-v8a/libappmodules.so"
 		}
 	],
 	"backtrace" : 3,
@@ -132,17 +132,17 @@
 				{
 					"backtrace" : 4,
 					"isSystem" : true,
-					"path" : "C:/Users/ugurl/.gradle/caches/8.14.1/transforms/51dbd9ae21c085b2cb843db84b5d6696/transformed/fbjni-0.7.0/prefab/modules/fbjni/include"
+					"path" : "C:/Users/ugurl/.gradle/caches/8.14.1/transforms/dd28153e477f01656e51c4dab7233750/transformed/fbjni-0.7.0/prefab/modules/fbjni/include"
 				},
 				{
 					"backtrace" : 4,
 					"isSystem" : true,
-					"path" : "C:/Users/ugurl/.gradle/caches/8.14.1/transforms/5d0a6fceadea979a29a63bd98787fde9/transformed/react-android-0.80.2-debug/prefab/modules/jsi/include"
+					"path" : "C:/Users/ugurl/.gradle/caches/8.14.1/transforms/ac4ebaf754dc18b487a31e43e5e3e9d1/transformed/react-android-0.80.2-debug/prefab/modules/jsi/include"
 				},
 				{
 					"backtrace" : 4,
 					"isSystem" : true,
-					"path" : "C:/Users/ugurl/.gradle/caches/8.14.1/transforms/5d0a6fceadea979a29a63bd98787fde9/transformed/react-android-0.80.2-debug/prefab/modules/reactnative/include"
+					"path" : "C:/Users/ugurl/.gradle/caches/8.14.1/transforms/ac4ebaf754dc18b487a31e43e5e3e9d1/transformed/react-android-0.80.2-debug/prefab/modules/reactnative/include"
 				}
 			],
 			"language" : "CXX",
@@ -168,17 +168,17 @@
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\51dbd9ae21c085b2cb843db84b5d6696\\transformed\\fbjni-0.7.0\\prefab\\modules\\fbjni\\libs\\android.x86_64\\libfbjni.so",
+				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\dd28153e477f01656e51c4dab7233750\\transformed\\fbjni-0.7.0\\prefab\\modules\\fbjni\\libs\\android.arm64-v8a\\libfbjni.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\5d0a6fceadea979a29a63bd98787fde9\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\jsi\\libs\\android.x86_64\\libjsi.so",
+				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\jsi\\libs\\android.arm64-v8a\\libjsi.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\5d0a6fceadea979a29a63bd98787fde9\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\reactnative\\libs\\android.x86_64\\libreactnative.so",
+				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\reactnative\\libs\\android.arm64-v8a\\libreactnative.so",
 				"role" : "libraries"
 			},
 			{

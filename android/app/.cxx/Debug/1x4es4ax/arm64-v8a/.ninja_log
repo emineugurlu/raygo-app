@@ -1,5 +1,11 @@
 # ninja log v5
-5	67	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a/CMakeFiles/cmake.verify_globs	1590b9d3aeae3f9e
-14	19971	7761850844847306	CMakeFiles/appmodules.dir/D_/PROJECT/raygo_app/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	b2e849b7bb35675e
-1	20668	7761850851767054	CMakeFiles/appmodules.dir/OnLoad.cpp.o	20a6dc20a6d676ea
-20668	20841	7761850853622423	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/arm64-v8a/libappmodules.so	22e783f6d083cc2
+1	30	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a/CMakeFiles/cmake.verify_globs	1590b9d3aeae3f9e
+37	6651	7762652110237187	CMakeFiles/appmodules.dir/D_/PROJECT/raygo_app/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	cb2618804beb2503
+74	2055	7762654797867323	build.ninja	b2519029c799db1b
+24	7202	7762652115701323	CMakeFiles/appmodules.dir/OnLoad.cpp.o	8f440ac751e9ebdd
+7202	7381	7762652117608495	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/arm64-v8a/libappmodules.so	185c74baf6f7ed9a
+0	12	0	clean	792362efd038130a
+3	111	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a/CMakeFiles/cmake.verify_globs	1590b9d3aeae3f9e
+44	8099	7762654884519450	CMakeFiles/appmodules.dir/D_/PROJECT/raygo_app/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	cb2618804beb2503
+63	8411	7762654887561903	CMakeFiles/appmodules.dir/OnLoad.cpp.o	8f440ac751e9ebdd
+8411	8542	7762654889011160	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/arm64-v8a/libappmodules.so	185c74baf6f7ed9a

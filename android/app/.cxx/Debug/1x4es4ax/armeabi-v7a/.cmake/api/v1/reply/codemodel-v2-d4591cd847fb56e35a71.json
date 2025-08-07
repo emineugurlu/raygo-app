@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "appmodules::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-appmodules-Debug-3e55dcddf7a969f540cd.json",
+					"jsonFile" : "target-appmodules-Debug-5a2ebe4e8e34a09eabaa.json",
 					"name" : "appmodules",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a",
+		"build" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a",
 		"source" : "D:/PROJECT/raygo_app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup"
 	},
 	"version" : 

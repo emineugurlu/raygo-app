@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "630503851421",
+    "project_id": "raygo-app",
+    "storage_bucket": "raygo-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630503851421:android:598221b007976d08d71b74",
+        "android_client_info": {
+          "package_name": "com.raygo_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhnPLGzRrEeTpoJ3Ar8akgTF2-jW_cqH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

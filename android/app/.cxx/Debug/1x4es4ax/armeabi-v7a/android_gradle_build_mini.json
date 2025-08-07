@@ -22,9 +22,9 @@
       "abi": "armeabi-v7a",
       "output": "D:\\PROJECT\\raygo_app\\android\\app\\build\\intermediates\\cxx\\Debug\\1x4es4ax\\obj\\armeabi-v7a\\libappmodules.so",
       "runtimeFiles": [
-        "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\51dbd9ae21c085b2cb843db84b5d6696\\transformed\\fbjni-0.7.0\\prefab\\modules\\fbjni\\libs\\android.armeabi-v7a\\libfbjni.so",
-        "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\5d0a6fceadea979a29a63bd98787fde9\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\jsi\\libs\\android.armeabi-v7a\\libjsi.so",
-        "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\5d0a6fceadea979a29a63bd98787fde9\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\reactnative\\libs\\android.armeabi-v7a\\libreactnative.so"
+        "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\dd28153e477f01656e51c4dab7233750\\transformed\\fbjni-0.7.0\\prefab\\modules\\fbjni\\libs\\android.armeabi-v7a\\libfbjni.so",
+        "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\jsi\\libs\\android.armeabi-v7a\\libjsi.so",
+        "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\reactnative\\libs\\android.armeabi-v7a\\libreactnative.so"
       ]
     }
   }
