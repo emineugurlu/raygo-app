@@ -82,3 +82,45 @@ clang++: error: invalid linker name in argument '-fuse-ld=gold'
 ninja: build stopped: subcommand failed.
 
 
+CXX compiler IPO check failed with the following output:
+Change Dir: D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin
+
+Run Build Command(s):C:\Users\ugurl\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe && [1/4] Building CXX object CMakeFiles/foo.dir/foo.cpp.o
+[2/4] Building CXX object CMakeFiles/boo.dir/main.cpp.o
+[3/4] Linking CXX static library libfoo.a
+[4/4] Linking CXX executable boo
+FAILED: boo 
+cmd.exe /C "cd . && C:\Users\ugurl\AppData\Local\Android\Sdk\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=armv7-none-linux-androideabi21 --sysroot=C:/Users/ugurl/AppData/Local/Android/Sdk/ndk/27.1.12297006/toolchains/llvm/prebuilt/windows-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -flto=thin -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments     -fuse-ld=gold CMakeFiles/boo.dir/main.cpp.o -o boo  libfoo.a  -latomic -lm && cd ."
+clang++: error: invalid linker name in argument '-fuse-ld=gold'
+clang++: error: invalid linker name in argument '-fuse-ld=gold'
+ninja: build stopped: subcommand failed.
+
+
+CXX compiler IPO check failed with the following output:
+Change Dir: D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin
+
+Run Build Command(s):C:\Users\ugurl\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe && [1/4] Building CXX object CMakeFiles/foo.dir/foo.cpp.o
+[2/4] Building CXX object CMakeFiles/boo.dir/main.cpp.o
+[3/4] Linking CXX static library libfoo.a
+[4/4] Linking CXX executable boo
+FAILED: boo 
+cmd.exe /C "cd . && C:\Users\ugurl\AppData\Local\Android\Sdk\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=armv7-none-linux-androideabi21 --sysroot=C:/Users/ugurl/AppData/Local/Android/Sdk/ndk/27.1.12297006/toolchains/llvm/prebuilt/windows-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -flto=thin -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments     -fuse-ld=gold CMakeFiles/boo.dir/main.cpp.o -o boo  libfoo.a  -latomic -lm && cd ."
+clang++: error: invalid linker name in argument '-fuse-ld=gold'
+clang++: error: invalid linker name in argument '-fuse-ld=gold'
+ninja: build stopped: subcommand failed.
+
+
+CXX compiler IPO check failed with the following output:
+Change Dir: D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin
+
+Run Build Command(s):C:\Users\ugurl\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe && [1/4] Building CXX object CMakeFiles/boo.dir/main.cpp.o
+[2/4] Building CXX object CMakeFiles/foo.dir/foo.cpp.o
+[3/4] Linking CXX static library libfoo.a
+[4/4] Linking CXX executable boo
+FAILED: boo 
+cmd.exe /C "cd . && C:\Users\ugurl\AppData\Local\Android\Sdk\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=armv7-none-linux-androideabi21 --sysroot=C:/Users/ugurl/AppData/Local/Android/Sdk/ndk/27.1.12297006/toolchains/llvm/prebuilt/windows-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -flto=thin -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments     -fuse-ld=gold CMakeFiles/boo.dir/main.cpp.o -o boo  libfoo.a  -latomic -lm && cd ."
+clang++: error: invalid linker name in argument '-fuse-ld=gold'
+clang++: error: invalid linker name in argument '-fuse-ld=gold'
+ninja: build stopped: subcommand failed.
+
+

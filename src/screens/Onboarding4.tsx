@@ -48,7 +48,7 @@ export default function Onboarding4({ navigation }: Props) {
         <TouchableOpacity
           style={styles.button}
           activeOpacity={0.7}
-          //onPress={() => navigation.navigate('Login')} // Artık giriş/kayıt veya şehir seç ekranına yönlendirebilirsin
+          onPress={() => navigation.navigate('Register')} // Artık giriş/kayıt veya şehir seç ekranına yönlendirebilirsin
         >
           <Text style={styles.buttonText}>
             Devam Et
