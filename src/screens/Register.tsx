@@ -44,17 +44,22 @@ export default function Register({ navigation }: Props) {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* --- Geri Butonu (PNG yok, text ile) --- */}
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+        <Text style={styles.backIcon}>‹</Text>
+      </TouchableOpacity>
+
       {/* Arka plan baloncuklar */}
-      <View style={StyleSheet.absoluteFill} pointerEvents="none"> 
-        {/* Üst sol - büyük lacivert */} 
-        <View style={[styles.circleLargeDark, { top: -150, left: -110 }]} /> 
-        {/* Üst sağ - küçük mavi */} 
-        <View style={[styles.circleSmallBlue, { top:-20, right: -20 }]} /> 
-        {/* Alt sağ - büyük lacivert */} 
-        <View style={[styles.circleLargeDark, { bottom: -150, right: -110 }]} /> 
-        {/* Alt sol - küçük mavi */} 
-        <View style={[styles.circleSmallBlue, { bottom: -10, left: -20 }]} /> 
-        </View>
+      <View style={StyleSheet.absoluteFill} pointerEvents="none">
+        {/* Üst sol - büyük lacivert */}
+        <View style={[styles.circleLargeDark, { top: -160, left: -100 }]} />
+        {/* Üst sağ - küçük mavi */}
+        <View style={[styles.circleSmallBlue, { top: -20, right: -20 }]} />
+        {/* Alt sağ - büyük lacivert */}
+        <View style={[styles.circleLargeDark, { bottom: -130, right: -110 }]} />
+        {/* Alt sol - küçük mavi */}
+        <View style={[styles.circleSmallBlue, { bottom: -10, left: -20 }]} />
+      </View>
 
       <View style={styles.content}>
         <Image source={require('../../assets/logo.png')} style={styles.logo} />
@@ -132,7 +137,7 @@ export default function Register({ navigation }: Props) {
               onPress={() => setPolicyVisible(true)}
             >
               Gizlilik politikası
-            </Text>{" "}
+            </Text>{' '}
             okudum, kabul ediyorum.
           </Text>
         </View>
@@ -160,7 +165,7 @@ export default function Register({ navigation }: Props) {
                 iyileştirmek amacıyla işler. Kayıt sırasında toplanan ad, e-posta ve
                 kimlik bilgileri üçüncü taraflarla paylaşılmaz. Hesabınızı dilediğiniz
                 zaman silebilir, verilerinizin silinmesini talep edebilirsiniz.
-                {"\n\n"}
+                {'\n\n'}
                 Uygulama çökme analizi, performans ölçümü gibi amaçlarla anonim
                 istatistikler toplayabilir. Politika zaman içinde güncellenebilir.
               </Text>
@@ -289,5 +294,20 @@ const styles = StyleSheet.create({
   modalBtnText: {
     color: '#fff',
     fontWeight: '700',
+  },
+
+  // Back button (text ile)
+  backButton: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    zIndex: 10,
+    padding: 6,
+  },
+  backIcon: {
+    fontSize: 28,
+    color: COLORS.button,
+    fontWeight: 'bold',
+    lineHeight: 28,
   },
 });
