@@ -26,13 +26,21 @@ type Props = {
 export default function Onboarding3({ navigation }: Props) {
   return (
     <SafeAreaView style={styles.container}>
+      {/* Geri butonu */}
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <View style={styles.chevronLeft} />
+      </TouchableOpacity>
+
       <View style={styles.content}>
         <Image
           source={require('../../assets/logo.png')}
           style={styles.logo}
         />
         <Image
-          source={require('../../assets/karşılama-turu-resim-3.png')} // Görsel yolunu kendi dosyana göre ayarla!
+          source={require('../../assets/karşılama-turu-resim-3.png')}
           style={styles.image}
         />
         <Text style={styles.title}>
@@ -44,6 +52,7 @@ export default function Onboarding3({ navigation }: Props) {
           <View style={[styles.dot, styles.dotInactive]} />
         </View>
       </View>
+
       <View style={styles.footer}>
         <TouchableOpacity
           style={styles.button}
@@ -74,6 +83,8 @@ type Styles = {
   button: ViewStyle;
   buttonText: TextStyle;
   arrow: TextStyle;
+  backButton: ViewStyle;
+  chevronLeft: ViewStyle;
 };
 
 const styles = StyleSheet.create<Styles>({
@@ -81,6 +92,24 @@ const styles = StyleSheet.create<Styles>({
     flex: 1,
     backgroundColor: COLORS.background,
     justifyContent: 'space-between'
+  },
+  backButton: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    zIndex: 10,
+    width: 32,
+    height: 32,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  chevronLeft: {
+    width: 12,
+    height: 12,
+    borderLeftWidth: 3,
+    borderBottomWidth: 3,
+    borderColor: '#1c6ba4',
+    transform: [{ rotate: '45deg' }]
   },
   content: {
     flex: 1,
@@ -92,13 +121,13 @@ const styles = StyleSheet.create<Styles>({
     width: 280,
     height: 120,
     resizeMode: 'contain',
-    marginBottom: 32,
+    marginBottom: 32
   },
   image: {
     width: 420,
     height: 340,
     resizeMode: 'contain',
-    marginBottom: 40,
+    marginBottom: 40
   },
   title: {
     fontSize: FONT_SIZES.title,

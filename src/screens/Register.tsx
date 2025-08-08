@@ -44,20 +44,16 @@ export default function Register({ navigation }: Props) {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* --- Geri Butonu (PNG yok, text ile) --- */}
+      {/* --- Geri Butonu (çizim ile) --- */}
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Text style={styles.backIcon}>‹</Text>
+        <View style={styles.chevronLeft} />
       </TouchableOpacity>
 
       {/* Arka plan baloncuklar */}
       <View style={StyleSheet.absoluteFill} pointerEvents="none">
-        {/* Üst sol - büyük lacivert */}
         <View style={[styles.circleLargeDark, { top: -160, left: -100 }]} />
-        {/* Üst sağ - küçük mavi */}
         <View style={[styles.circleSmallBlue, { top: -20, right: -20 }]} />
-        {/* Alt sağ - büyük lacivert */}
         <View style={[styles.circleLargeDark, { bottom: -130, right: -110 }]} />
-        {/* Alt sol - küçük mavi */}
         <View style={[styles.circleSmallBlue, { bottom: -10, left: -20 }]} />
       </View>
 
@@ -177,12 +173,10 @@ export default function Register({ navigation }: Props) {
           </Pressable>
         </Pressable>
       </Modal>
-      {/* ---- /Modal ---- */}
     </SafeAreaView>
   );
 }
 
-/* ===== Styles ===== */
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background },
   content: {
@@ -258,7 +252,6 @@ const styles = StyleSheet.create({
   buttonText: { color: COLORS.white, fontSize: FONT_SIZES.title, fontFamily: FONTS.bold, fontWeight: FONT_WEIGHTS.bold },
   error: { color: '#e22', marginBottom: 8, marginTop: 4, fontWeight: '700' },
 
-  // Modal stilleri
   modalBackdrop: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.35)',
@@ -296,18 +289,23 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 
-  // Back button (text ile)
+  // Geri butonunun çizimi
   backButton: {
     position: 'absolute',
     top: 20,
     left: 20,
     zIndex: 10,
-    padding: 6,
+    width: 32,
+    height: 32,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  backIcon: {
-    fontSize: 28,
-    color: COLORS.button,
-    fontWeight: 'bold',
-    lineHeight: 28,
+  chevronLeft: {
+    width: 12,
+    height: 12,
+    borderLeftWidth: 3,
+    borderBottomWidth: 3,
+    borderColor: '#1c6ba4',
+    transform: [{ rotate: '45deg' }]
   },
 });

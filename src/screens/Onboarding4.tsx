@@ -5,10 +5,7 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  StyleSheet,
-  ImageStyle,
-  ViewStyle,
-  TextStyle
+  StyleSheet
 } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigation/AppNavigator';
@@ -26,13 +23,21 @@ type Props = {
 export default function Onboarding4({ navigation }: Props) {
   return (
     <SafeAreaView style={styles.container}>
+      {/* Geri butonu */}
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <View style={styles.chevronLeft} />
+      </TouchableOpacity>
+
       <View style={styles.content}>
         <Image
           source={require('../../assets/logo.png')}
           style={styles.logo}
         />
         <Image
-          source={require('../../assets/karşılama-turu-resim-2.png')} // Görsel yolunu kendi dosyana göre ayarla!
+          source={require('../../assets/karşılama-turu-resim-2.png')}
           style={styles.image}
         />
         <Text style={styles.title}>
@@ -44,11 +49,12 @@ export default function Onboarding4({ navigation }: Props) {
           <View style={[styles.dot, styles.dotActive]} />
         </View>
       </View>
+
       <View style={styles.footer}>
         <TouchableOpacity
           style={styles.button}
           activeOpacity={0.7}
-          onPress={() => navigation.navigate('Register')} // Artık giriş/kayıt veya şehir seç ekranına yönlendirebilirsin
+          onPress={() => navigation.navigate('Register')}
         >
           <Text style={styles.buttonText}>
             Devam Et
@@ -60,27 +66,29 @@ export default function Onboarding4({ navigation }: Props) {
   );
 }
 
-type Styles = {
-  container: ViewStyle;
-  content: ViewStyle;
-  logo: ImageStyle;
-  image: ImageStyle;
-  title: TextStyle;
-  indicator: ViewStyle;
-  dot: ViewStyle;
-  dotActive: ViewStyle;
-  dotInactive: ViewStyle;
-  footer: ViewStyle;
-  button: ViewStyle;
-  buttonText: TextStyle;
-  arrow: TextStyle;
-};
-
-const styles = StyleSheet.create<Styles>({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
     justifyContent: 'space-between'
+  },
+  backButton: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    zIndex: 10,
+    width: 32,
+    height: 32,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  chevronLeft: {
+    width: 12,
+    height: 12,
+    borderLeftWidth: 3,
+    borderBottomWidth: 3,
+    borderColor: '#1c6ba4', // mavi ton
+    transform: [{ rotate: '45deg' }]
   },
   content: {
     flex: 1,
@@ -92,13 +100,13 @@ const styles = StyleSheet.create<Styles>({
     width: 280,
     height: 120,
     resizeMode: 'contain',
-    marginBottom: 32,
+    marginBottom: 32
   },
   image: {
     width: 420,
     height: 340,
     resizeMode: 'contain',
-    marginBottom: 40,
+    marginBottom: 40
   },
   title: {
     fontSize: FONT_SIZES.title,
