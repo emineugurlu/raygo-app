@@ -32,11 +32,17 @@ export default function Register({ navigation }: Props) {
     if (!checked) return setError('Gizlilik politikasını kabul etmelisiniz.');
 
     try {
+      // Önce mevcut kullanıcıyı kontrol et
+      const methods = await firebaseAuth.fetchSignInMethodsForEmail(email.trim());
+      if (methods.length > 0) {
+        return setError('Bu e-posta ile zaten bir hesap var.');
+      }
+
       await firebaseAuth.createUserWithEmailAndPassword(email.trim(), password);
       if (firebaseAuth.currentUser) {
         await firebaseAuth.currentUser.updateProfile({ displayName: name.trim() });
       }
-      navigation.replace('Onboarding4');
+      navigation.replace('Login');
     } catch (err: any) {
       setError(err?.message || 'Kayıt sırasında bir hata oluştu');
     }
@@ -53,7 +59,7 @@ export default function Register({ navigation }: Props) {
       <View style={StyleSheet.absoluteFill} pointerEvents="none">
         <View style={[styles.circleLargeDark, { top: -160, left: -100 }]} />
         <View style={[styles.circleSmallBlue, { top: -20, right: -20 }]} />
-        <View style={[styles.circleLargeDark, { bottom: -130, right: -110 }]} />
+        <View style={[styles.circleLargeDark, { bottom: -150, right: -110 }]} />
         <View style={[styles.circleSmallBlue, { bottom: -10, left: -20 }]} />
       </View>
 
@@ -143,6 +149,22 @@ export default function Register({ navigation }: Props) {
         <TouchableOpacity style={styles.button} onPress={handleRegister}>
           <Text style={styles.buttonText}>Kayıt Ol</Text>
         </TouchableOpacity>
+
+        {/* --- Hesap var mı? --- */}
+        <View style={{ flexDirection: 'row', marginTop: 4 }}>
+          <Text style={{ fontSize: 13, color: '#333' }}>Zaten hesabın var mı? </Text>
+          <Text
+            style={{
+              color: COLORS.button,
+              textDecorationLine: 'underline',
+              fontWeight: '700',
+              fontSize: 13
+            }}
+            onPress={() => navigation.navigate('Login')}
+          >
+            Giriş yap
+          </Text>
+        </View>
       </View>
 
       {/* ---- Modal: Gizlilik Politikası ---- */}
@@ -242,7 +264,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     alignItems: 'center',
     marginTop: 12,
-    marginBottom: 18,
+    marginBottom: 8,
     shadowColor: '#1c6ba4',
     shadowOpacity: 0.14,
     shadowOffset: { width: 0, height: 3 },
@@ -289,7 +311,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 
-  // Geri butonunun çizimi
   backButton: {
     position: 'absolute',
     top: 20,
