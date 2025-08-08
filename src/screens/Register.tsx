@@ -1,7 +1,8 @@
 // src/screens/Register.tsx
 import React, { useState } from 'react';
 import {
-  SafeAreaView, View, Text, TextInput, TouchableOpacity, Image, StyleSheet
+  SafeAreaView, View, Text, TextInput, TouchableOpacity, Image, StyleSheet,
+  Modal, Pressable, ScrollView
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { StackScreenProps } from '@react-navigation/stack';
@@ -21,17 +22,15 @@ export default function Register({ navigation }: Props) {
   const [checked, setChecked] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Gizlilik modalı
+  const [policyVisible, setPolicyVisible] = useState(false);
+
   const handleRegister = async () => {
     setError(null);
-    if (!name || !email || !password || !passwordAgain) {
-      setError('Tüm alanları doldurun'); return;
-    }
-    if (password !== passwordAgain) {
-      setError('Şifreler uyuşmuyor'); return;
-    }
-    if (!checked) {
-      setError('Gizlilik politikasını kabul etmelisiniz.'); return;
-    }
+    if (!name || !email || !password || !passwordAgain) return setError('Tüm alanları doldurun');
+    if (password !== passwordAgain) return setError('Şifreler uyuşmuyor');
+    if (!checked) return setError('Gizlilik politikasını kabul etmelisiniz.');
+
     try {
       await firebaseAuth.createUserWithEmailAndPassword(email.trim(), password);
       if (firebaseAuth.currentUser) {
@@ -46,21 +45,20 @@ export default function Register({ navigation }: Props) {
   return (
     <SafeAreaView style={styles.container}>
       {/* Arka plan baloncuklar */}
-      <View style={StyleSheet.absoluteFill} pointerEvents="none">
-        {/* Üst sol - büyük lacivert */}
-        <View style={[styles.circleLargeDark, { top: -100, left: -80 }]} />
-        {/* Üst sağ - küçük mavi */}
-        <View style={[styles.circleSmallBlue, { top:-20, right: -20 }]} />
-        {/* Alt sağ - büyük lacivert */}
-        <View style={[styles.circleLargeDark, { bottom: -50, right: -60 }]} />
-        {/* Alt sol - küçük mavi */}
-        <View style={[styles.circleSmallBlue, { bottom: 40, left: -20 }]} />
-      </View>
+      <View style={StyleSheet.absoluteFill} pointerEvents="none"> 
+        {/* Üst sol - büyük lacivert */} 
+        <View style={[styles.circleLargeDark, { top: -150, left: -110 }]} /> 
+        {/* Üst sağ - küçük mavi */} 
+        <View style={[styles.circleSmallBlue, { top:-20, right: -20 }]} /> 
+        {/* Alt sağ - büyük lacivert */} 
+        <View style={[styles.circleLargeDark, { bottom: -150, right: -110 }]} /> 
+        {/* Alt sol - küçük mavi */} 
+        <View style={[styles.circleSmallBlue, { bottom: -10, left: -20 }]} /> 
+        </View>
 
       <View style={styles.content}>
         <Image source={require('../../assets/logo.png')} style={styles.logo} />
 
-        {/* Ad Soyad */}
         <View style={styles.inputContainer}>
           <Text style={styles.icon}>👤</Text>
           <TextInput
@@ -72,7 +70,6 @@ export default function Register({ navigation }: Props) {
           />
         </View>
 
-        {/* E-posta */}
         <View style={styles.inputContainer}>
           <Text style={styles.icon}>📧</Text>
           <TextInput
@@ -89,7 +86,6 @@ export default function Register({ navigation }: Props) {
           />
         </View>
 
-        {/* Şifre */}
         <View style={styles.inputContainer}>
           <Text style={styles.icon}>🔒</Text>
           <TextInput
@@ -106,7 +102,6 @@ export default function Register({ navigation }: Props) {
           </TouchableOpacity>
         </View>
 
-        {/* Şifre Tekrar */}
         <View style={styles.inputContainer}>
           <Text style={styles.icon}>🔒</Text>
           <TextInput
@@ -123,7 +118,7 @@ export default function Register({ navigation }: Props) {
           </TouchableOpacity>
         </View>
 
-        {/* Gizlilik politikası */}
+        {/* Gizlilik politikası + checkbox */}
         <View style={styles.privacyContainer}>
           <CheckBox
             value={checked}
@@ -132,7 +127,13 @@ export default function Register({ navigation }: Props) {
             style={{ marginRight: 8 }}
           />
           <Text style={styles.privacyText}>
-            Gizlilik politikasını okudum, kabul ediyorum.
+            <Text
+              style={styles.privacyLink}
+              onPress={() => setPolicyVisible(true)}
+            >
+              Gizlilik politikası
+            </Text>{" "}
+            okudum, kabul ediyorum.
           </Text>
         </View>
 
@@ -142,26 +143,56 @@ export default function Register({ navigation }: Props) {
           <Text style={styles.buttonText}>Kayıt Ol</Text>
         </TouchableOpacity>
       </View>
+
+      {/* ---- Modal: Gizlilik Politikası ---- */}
+      <Modal
+        animationType="fade"
+        transparent
+        visible={policyVisible}
+        onRequestClose={() => setPolicyVisible(false)}
+      >
+        <Pressable style={styles.modalBackdrop} onPress={() => setPolicyVisible(false)}>
+          <Pressable style={styles.modalCard}>
+            <Text style={styles.modalTitle}>Gizlilik Politikası</Text>
+            <ScrollView style={{ maxHeight: 260 }} showsVerticalScrollIndicator>
+              <Text style={styles.modalText}>
+                Bu uygulama, kullanıcı verilerini yalnızca hizmetleri sunmak ve
+                iyileştirmek amacıyla işler. Kayıt sırasında toplanan ad, e-posta ve
+                kimlik bilgileri üçüncü taraflarla paylaşılmaz. Hesabınızı dilediğiniz
+                zaman silebilir, verilerinizin silinmesini talep edebilirsiniz.
+                {"\n\n"}
+                Uygulama çökme analizi, performans ölçümü gibi amaçlarla anonim
+                istatistikler toplayabilir. Politika zaman içinde güncellenebilir.
+              </Text>
+            </ScrollView>
+
+            <TouchableOpacity style={styles.modalBtn} onPress={() => setPolicyVisible(false)}>
+              <Text style={styles.modalBtnText}>Kapat</Text>
+            </TouchableOpacity>
+          </Pressable>
+        </Pressable>
+      </Modal>
+      {/* ---- /Modal ---- */}
     </SafeAreaView>
   );
 }
 
+/* ===== Styles ===== */
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background },
   content: {
     flex: 1,
-    justifyContent: 'center', // tam ortalama
+    justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
-    width: '100%'
+    width: '100%',
   },
   logo: { width: 200, height: 100, resizeMode: 'contain', marginBottom: 28 },
 
-  // Baloncuklar
   circleLargeDark: {
     position: 'absolute',
-    width: 220,
-    height: 220,
+    width: 320,
+    height: 320,
     backgroundColor: '#0D2854',
     borderRadius: 9999,
     opacity: 0.95,
@@ -194,8 +225,17 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.bold,
     color: COLORS.text,
   },
-  privacyContainer: { flexDirection: 'row', alignItems: 'center', marginBottom: 14, marginTop: 2, width: '100%' },
+
+  privacyContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 14,
+    marginTop: 2,
+    width: '100%',
+  },
   privacyText: { fontSize: 13, color: '#333', flex: 1, flexWrap: 'wrap' },
+  privacyLink: { color: COLORS.button, textDecorationLine: 'underline', fontWeight: '700' },
+
   button: {
     width: '100%',
     backgroundColor: COLORS.button,
@@ -208,8 +248,46 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.14,
     shadowOffset: { width: 0, height: 3 },
     shadowRadius: 6,
-    elevation: 4
+    elevation: 4,
   },
   buttonText: { color: COLORS.white, fontSize: FONT_SIZES.title, fontFamily: FONTS.bold, fontWeight: FONT_WEIGHTS.bold },
-  error: { color: '#e22', marginBottom: 8, marginTop: 4, fontWeight: '700' }
+  error: { color: '#e22', marginBottom: 8, marginTop: 4, fontWeight: '700' },
+
+  // Modal stilleri
+  modalBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.35)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 24,
+  },
+  modalCard: {
+    width: '100%',
+    backgroundColor: '#fff',
+    borderRadius: 14,
+    padding: 16,
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontFamily: FONTS.bold,
+    color: COLORS.text,
+    marginBottom: 8,
+  },
+  modalText: {
+    fontSize: 14,
+    color: '#333',
+    lineHeight: 20,
+  },
+  modalBtn: {
+    marginTop: 14,
+    alignSelf: 'flex-end',
+    paddingVertical: 10,
+    paddingHorizontal: 14,
+    borderRadius: 8,
+    backgroundColor: COLORS.button,
+  },
+  modalBtnText: {
+    color: '#fff',
+    fontWeight: '700',
+  },
 });
