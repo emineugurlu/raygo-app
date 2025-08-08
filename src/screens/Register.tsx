@@ -37,8 +37,7 @@ export default function Register({ navigation }: Props) {
       if (firebaseAuth.currentUser) {
         await firebaseAuth.currentUser.updateProfile({ displayName: name.trim() });
       }
-      // Başarılı kayıt -> dilediğin ekrana geç
-      navigation.replace('Onboarding4'); // veya navigation.replace('Login') / 'Home'
+      navigation.replace('Onboarding4');
     } catch (err: any) {
       setError(err?.message || 'Kayıt sırasında bir hata oluştu');
     }
@@ -46,6 +45,18 @@ export default function Register({ navigation }: Props) {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* Arka plan baloncuklar */}
+      <View style={StyleSheet.absoluteFill} pointerEvents="none">
+        {/* Üst sol - büyük lacivert */}
+        <View style={[styles.circleLargeDark, { top: -100, left: -80 }]} />
+        {/* Üst sağ - küçük mavi */}
+        <View style={[styles.circleSmallBlue, { top:-20, right: -20 }]} />
+        {/* Alt sağ - büyük lacivert */}
+        <View style={[styles.circleLargeDark, { bottom: -50, right: -60 }]} />
+        {/* Alt sol - küçük mavi */}
+        <View style={[styles.circleSmallBlue, { bottom: 40, left: -20 }]} />
+      </View>
+
       <View style={styles.content}>
         <Image source={require('../../assets/logo.png')} style={styles.logo} />
 
@@ -62,22 +73,21 @@ export default function Register({ navigation }: Props) {
         </View>
 
         {/* E-posta */}
-<View style={styles.inputContainer}>
-  <Text style={styles.icon}>📧</Text>
-  <TextInput
-    style={styles.input}
-    placeholder="E-Posta"
-    placeholderTextColor="#666"
-    value={email}
-    onChangeText={setEmail}
-    keyboardType="email-address"
-    autoCapitalize="none"
-    autoCorrect={false}             // otomatik düzeltmeyi kapat
-    textContentType="emailAddress"  // iOS ve Android'de doğru klavye
-    inputMode="email"               // Android 13+ için
-  />
-</View>
-
+        <View style={styles.inputContainer}>
+          <Text style={styles.icon}>📧</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="E- Posta"
+            placeholderTextColor="#666"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            autoCorrect={false}
+            textContentType="emailAddress"
+            inputMode="email"
+          />
+        </View>
 
         {/* Şifre */}
         <View style={styles.inputContainer}>
@@ -137,25 +147,68 @@ export default function Register({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: COLORS.background, justifyContent: 'center' },
-  content: { alignItems: 'center', paddingHorizontal: 20, width: '100%' },
-  logo: { width: 180, height: 80, resizeMode: 'contain', marginBottom: 28 },
+  container: { flex: 1, backgroundColor: COLORS.background },
+  content: {
+    flex: 1,
+    justifyContent: 'center', // tam ortalama
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    width: '100%'
+  },
+  logo: { width: 200, height: 100, resizeMode: 'contain', marginBottom: 28 },
+
+  // Baloncuklar
+  circleLargeDark: {
+    position: 'absolute',
+    width: 220,
+    height: 220,
+    backgroundColor: '#0D2854',
+    borderRadius: 9999,
+    opacity: 0.95,
+  },
+  circleSmallBlue: {
+    position: 'absolute',
+    width: 92,
+    height: 92,
+    backgroundColor: '#1c6ba4',
+    borderRadius: 9999,
+    opacity: 0.95,
+  },
+
   inputContainer: {
-    flexDirection: 'row', alignItems: 'center', backgroundColor: '#fff',
-    borderRadius: 10, borderWidth: 1, borderColor: '#1c6ba4',
-    marginBottom: 14, paddingHorizontal: 12, width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#1c6ba4',
+    marginBottom: 14,
+    paddingHorizontal: 12,
+    width: '100%',
   },
   icon: { fontSize: 22, marginRight: 8 },
   input: {
-    flex: 1, fontSize: FONT_SIZES.title, paddingVertical: 14,
-    fontFamily: FONTS.bold, color: COLORS.text,
+    flex: 1,
+    fontSize: FONT_SIZES.title,
+    paddingVertical: 14,
+    fontFamily: FONTS.bold,
+    color: COLORS.text,
   },
   privacyContainer: { flexDirection: 'row', alignItems: 'center', marginBottom: 14, marginTop: 2, width: '100%' },
   privacyText: { fontSize: 13, color: '#333', flex: 1, flexWrap: 'wrap' },
   button: {
-    width: '100%', backgroundColor: COLORS.button, borderRadius: 10,
-    paddingVertical: 14, alignItems: 'center', marginTop: 12, marginBottom: 18,
-    shadowColor: '#1c6ba4', shadowOpacity: 0.14, shadowOffset: { width: 0, height: 3 }, shadowRadius: 6, elevation: 4
+    width: '100%',
+    backgroundColor: COLORS.button,
+    borderRadius: 10,
+    paddingVertical: 14,
+    alignItems: 'center',
+    marginTop: 12,
+    marginBottom: 18,
+    shadowColor: '#1c6ba4',
+    shadowOpacity: 0.14,
+    shadowOffset: { width: 0, height: 3 },
+    shadowRadius: 6,
+    elevation: 4
   },
   buttonText: { color: COLORS.white, fontSize: FONT_SIZES.title, fontFamily: FONTS.bold, fontWeight: FONT_WEIGHTS.bold },
   error: { color: '#e22', marginBottom: 8, marginTop: 4, fontWeight: '700' }
