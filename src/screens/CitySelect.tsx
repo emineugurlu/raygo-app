@@ -35,7 +35,7 @@ export default function CitySelect({ navigation }: Props) {
 
       {/* Logo sağ üst */}
       <Image
-        source={require('../assets/logo.png')}
+        source={require('../../assets/logo.png')}
         style={styles.logo}
       />
 
