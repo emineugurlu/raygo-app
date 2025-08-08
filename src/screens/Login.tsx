@@ -20,6 +20,12 @@ export default function Login({ navigation }: Props) {
   const [password, setPassword] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
 
+  const handleLogin = () => {
+    // Burada Firebase login işlemini ekleyeceğiz
+    // Şimdilik direkt CitySystem sayfasına yönlendirelim
+    navigation.replace('CitySelect');
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       {/* --- Geri Butonu (çizim ile) --- */}
@@ -75,7 +81,7 @@ export default function Login({ navigation }: Props) {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Giriş Yap</Text>
         </TouchableOpacity>
       </View>

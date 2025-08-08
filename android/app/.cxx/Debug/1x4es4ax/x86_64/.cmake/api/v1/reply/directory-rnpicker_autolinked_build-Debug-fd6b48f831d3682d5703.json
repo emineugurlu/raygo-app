@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "rnpicker_autolinked_build",
+		"source" : "D:/PROJECT/raygo_app/node_modules/@react-native-picker/picker/android/src/main/jni"
+	}
+}

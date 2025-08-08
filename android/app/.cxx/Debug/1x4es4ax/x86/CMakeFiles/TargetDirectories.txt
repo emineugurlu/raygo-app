@@ -1,6 +1,9 @@
 D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/CMakeFiles/appmodules.dir
 D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/CMakeFiles/edit_cache.dir
 D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/CMakeFiles/rebuild_cache.dir
+D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rnpicker_autolinked_build/CMakeFiles/react_codegen_rnpicker.dir
+D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rnpicker_autolinked_build/CMakeFiles/edit_cache.dir
+D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rnpicker_autolinked_build/CMakeFiles/rebuild_cache.dir
 D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir
 D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rngesturehandler_codegen_autolinked_build/CMakeFiles/edit_cache.dir
 D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rngesturehandler_codegen_autolinked_build/CMakeFiles/rebuild_cache.dir
