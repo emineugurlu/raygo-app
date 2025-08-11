@@ -9,6 +9,7 @@ import Onboarding4 from '../screens/Onboarding4';
 import Register    from '../screens/Register';
 import Login       from '../screens/Login';
 import CitySelect  from '../screens/CitySelect'; // <-- EKLENDİ
+import RouteSelect from '../screens/RouteSelect';
 
 // Tüm ekranları burada tanımla
 export type RootStackParamList = {
@@ -19,6 +20,7 @@ export type RootStackParamList = {
   Register: undefined;
   Login: undefined;
   CitySelect: undefined; // <-- EKLENDİ
+  RouteSelect : undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -33,6 +35,8 @@ export default function AppNavigator() {
       <Stack.Screen name="Register"    component={Register} />
       <Stack.Screen name="Login"       component={Login} />
       <Stack.Screen name="CitySelect"  component={CitySelect} /> 
+      <Stack.Screen name="RouteSelect" component={RouteSelect} />
+
     </Stack.Navigator>
   );
 }

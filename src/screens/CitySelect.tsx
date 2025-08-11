@@ -13,6 +13,7 @@ import { Picker } from '@react-native-picker/picker';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigation/AppNavigator';
 
+
 type Props = StackScreenProps<RootStackParamList, 'CitySelect'>;
 
 export default function CitySelect({ navigation }: Props) {
@@ -102,9 +103,12 @@ export default function CitySelect({ navigation }: Props) {
         </View>
 
         {/* Devam Et butonu */}
-        <TouchableOpacity style={styles.button} onPress={handleContinue}>
-          <Text style={styles.buttonText}>Devam Et →</Text>
-        </TouchableOpacity>
+        <TouchableOpacity
+  style={styles.button}
+  onPress={() => navigation.navigate('RouteSelect')} // Burada yönlendirme yapıyoruz
+>
+  <Text style={styles.buttonText}>Devam Et →</Text>
+</TouchableOpacity>
       </View>
 
       {/* Alt sağ kareler */}

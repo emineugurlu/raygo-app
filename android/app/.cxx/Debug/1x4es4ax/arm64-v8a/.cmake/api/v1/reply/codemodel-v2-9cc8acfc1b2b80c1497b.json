@@ -132,7 +132,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "appmodules::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-appmodules-Debug-d579181d0a7cb42ba19d.json",
+					"jsonFile" : "target-appmodules-Debug-6206d6d8bae4407d2b0b.json",
 					"name" : "appmodules",
 					"projectIndex" : 0
 				},
@@ -153,21 +153,21 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "react_codegen_rnpicker::@e8bb2e9e833f47d0d516",
-					"jsonFile" : "target-react_codegen_rnpicker-Debug-a411c923fb4f41ae0714.json",
+					"jsonFile" : "target-react_codegen_rnpicker-Debug-067a5351ae0568d6941c.json",
 					"name" : "react_codegen_rnpicker",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "react_codegen_rnscreens::@25bcbd507e98d3a854ad",
-					"jsonFile" : "target-react_codegen_rnscreens-Debug-6504e18db44fc31fcc92.json",
+					"jsonFile" : "target-react_codegen_rnscreens-Debug-128da89701fe0288225e.json",
 					"name" : "react_codegen_rnscreens",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "react_codegen_safeareacontext::@7984cd80db47aa7b952a",
-					"jsonFile" : "target-react_codegen_safeareacontext-Debug-10162c88193aa4316ed0.json",
+					"jsonFile" : "target-react_codegen_safeareacontext-Debug-547c8cc6732dc1afa8ba.json",
 					"name" : "react_codegen_safeareacontext",
 					"projectIndex" : 0
 				}
@@ -177,7 +177,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64",
+		"build" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a",
 		"source" : "D:/PROJECT/raygo_app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup"
 	},
 	"version" : 

@@ -1,17 +1,17 @@
 # ninja log v5
 34950	45241	7762898468416486	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/4393431787ce547f36e856e6f25eb599/source/codegen/jni/react/renderer/components/rnscreens/rnscreensJSI-generated.cpp.o	e7ad0d01a111467c
 117	35043	7762898364843777	rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/ComponentDescriptors.cpp.o	fe1a6b654d44ddc9
-63	1830	7766004835988499	build.ninja	2352f83fae1e1215
+69	2099	7766087068852222	build.ninja	2352f83fae1e1215
 112	12765	7766003732366764	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/RNVectorIconsSpecJSI-generated.cpp.o	9f924a36cfb6d58
 74	11091	7766003716239312	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/Props.cpp.o	9902a4b8b34b3460
-42	15864	7766003764222699	CMakeFiles/appmodules.dir/OnLoad.cpp.o	cf82bc7ccdcf052f
+34	11121	7766066139155828	CMakeFiles/appmodules.dir/OnLoad.cpp.o	cf82bc7ccdcf052f
 24698	43414	7762898450052988	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/76b790ee20e895e66ca3b752d2979c05/common/cpp/react/renderer/components/rnscreens/RNSFullWindowOverlayShadowNode.cpp.o	9c4538581a4ce9a4
-2	73	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/cmake.verify_globs	96892fdea0b0cf84
+1	55	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/cmake.verify_globs	96892fdea0b0cf84
 101	17795	7762898192594335	rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/EventEmitters.cpp.o	46fd96791b749ea4
 127	12024	7766003725487881	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/RNVectorIconsSpec-generated.cpp.o	2c58c1462a3a0cd
-32	29740	7766003901546403	CMakeFiles/appmodules.dir/D_/PROJECT/raygo_app/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	a7528c99f95c49ce
+43	26514	7766066291473121	CMakeFiles/appmodules.dir/D_/PROJECT/raygo_app/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	a7528c99f95c49ce
 260	20011	7763861898227577	rnpicker_autolinked_build/CMakeFiles/react_codegen_rnpicker.dir/RNCAndroidDialogPickerMeasurementsManager.cpp.o	67d65dd1deb6f090
-29741	30356	7766003908893965	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/armeabi-v7a/libappmodules.so	958eec662209ac7e
+26515	27225	7766066300070757	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/armeabi-v7a/libappmodules.so	958eec662209ac7e
 29812	48445	7762898499841551	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/b498e4a45bfe531feef66101f05ab916/generated/source/codegen/jni/react/renderer/components/rnscreens/EventEmitters.cpp.o	1e59b58d8a6f22db
 0	25	0	clean	792362efd038130a
 36	10290	7763861800789314	rnpicker_autolinked_build/CMakeFiles/react_codegen_rnpicker.dir/2645d76b4955ceaa0704a32ed3be6454/build/generated/source/codegen/jni/react/renderer/components/rnpicker/States.cpp.o	e7566fcc8a940a0d
@@ -62,5 +62,7 @@
 63	15437	7766003759914533	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ComponentDescriptors.cpp.o	317d69cd9d38b402
 21224	21505	7763861913275237	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/armeabi-v7a/libreact_codegen_rnpicker.so	f29c7358a5b89163
 53	12606	7766003731386132	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ShadowNodes.cpp.o	67d64d88cd7ca472
-1	34	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/cmake.verify_globs	96892fdea0b0cf84
-1	41	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/cmake.verify_globs	96892fdea0b0cf84
+2	34	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/cmake.verify_globs	96892fdea0b0cf84
+1	36	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/cmake.verify_globs	96892fdea0b0cf84
+1	45	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/cmake.verify_globs	96892fdea0b0cf84
+2	43	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/cmake.verify_globs	96892fdea0b0cf84
