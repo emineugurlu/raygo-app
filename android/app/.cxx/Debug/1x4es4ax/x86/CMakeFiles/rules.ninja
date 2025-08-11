@@ -106,6 +106,16 @@ rule CXX_SHARED_LIBRARY_LINKER__react_codegen_rnscreens_Debug
 
 
 #############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__react_codegen_RNVectorIconsSpec_Debug
+  depfile = $DEP_FILE
+  deps = gcc
+  command = C:\Users\ugurl\AppData\Local\Android\Sdk\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android24 --sysroot=C:/Users/ugurl/AppData/Local/Android/Sdk/ndk/27.1.12297006/toolchains/llvm/prebuilt/windows-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building CXX object $out
+
+
+#############################################
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE

@@ -48,6 +48,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/rngesturehandler_codegen_autolinked_build/cmake_install.cmake")
   include("D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/safeareacontext_autolinked_build/cmake_install.cmake")
   include("D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/rnscreens_autolinked_build/cmake_install.cmake")
+  include("D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/RNVectorIconsSpec_autolinked_build/cmake_install.cmake")
 
 endif()
 

@@ -1,15 +1,18 @@
 # ninja log v5
 1814	44074	7762897363950074	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/b9c8452d3930499f89d2b46784e99d0d/android/build/generated/source/codegen/jni/safeareacontext-generated.cpp.o	18bda22842272f32
-2	78	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a/CMakeFiles/cmake.verify_globs	1590b9d3aeae3f9e
+1	46	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a/CMakeFiles/cmake.verify_globs	1590b9d3aeae3f9e
 100	17961	7763861521039287	rnpicker_autolinked_build/CMakeFiles/react_codegen_rnpicker.dir/2645d76b4955ceaa0704a32ed3be6454/build/generated/source/codegen/jni/react/renderer/components/rnpicker/Props.cpp.o	9ac3b2c68972c81b
 946	39462	7762897320024137	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/585886f052497c0058f0526facbf10b0/source/codegen/jni/react/renderer/components/safeareacontext/States.cpp.o	ba196dc00342a8b2
-190	31140	7763861651898191	CMakeFiles/appmodules.dir/D_/PROJECT/raygo_app/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	38ac8db9338a50f2
+150	15913	7766003372939415	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/RNVectorIconsSpec-generated.cpp.o	db34b89c18cb18aa
+79	33179	7766003544261507	CMakeFiles/appmodules.dir/D_/PROJECT/raygo_app/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	af94291472ccce0d
+74	2550	7766004799282735	build.ninja	b2519029c799db1b
 200	55402	7762897485241271	rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/ComponentDescriptors.cpp.o	786ff86a55dac49
 54614	69052	7762897622315131	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/4393431787ce547f36e856e6f25eb599/source/codegen/jni/react/renderer/components/rnscreens/rnscreensJSI-generated.cpp.o	ca7506f27e07790e
-103	2109	7763863619438212	build.ninja	b2519029c799db1b
+96	16204	7766003375921246	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/Props.cpp.o	64ba801014d6fd10
+138	15783	7766003371713155	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/RNVectorIconsSpecJSI-generated.cpp.o	e89768a269cfb1da
+72	17452	7766003388246301	CMakeFiles/appmodules.dir/OnLoad.cpp.o	71aa64ee8b643ec5
 112	14064	7763861482607545	rnpicker_autolinked_build/CMakeFiles/react_codegen_rnpicker.dir/2645d76b4955ceaa0704a32ed3be6454/build/generated/source/codegen/jni/react/renderer/components/rnpicker/ShadowNodes.cpp.o	90835acb6243f0fa
-206	15100	7763861492760875	CMakeFiles/appmodules.dir/OnLoad.cpp.o	2a2ae6c35e01768a
-31140	31426	7763861656035231	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/arm64-v8a/libappmodules.so	7a66138a23d5865e
+33179	33983	7766003553323248	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/arm64-v8a/libappmodules.so	d21beb768acc506a
 39463	85709	7762897789458409	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/b498e4a45bfe531feef66101f05ab916/generated/source/codegen/jni/react/renderer/components/rnscreens/EventEmitters.cpp.o	22a50b5ce7b51b2a
 61828	65729	7762897578679712	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/arm64-v8a/libreact_codegen_safeareacontext.so	a6af22aba06478ff
 0	24	0	clean	792362efd038130a
@@ -22,6 +25,7 @@
 31890	66954	7762897598615431	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/76b790ee20e895e66ca3b752d2979c05/common/cpp/react/renderer/components/rnscreens/RNSScreenStackHeaderConfigState.cpp.o	e6c8a43add368209
 18965	19243	7763861534376222	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/arm64-v8a/libreact_codegen_rnpicker.so	cf4e71c3e38c5199
 795	26907	7762897184223432	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/70f9c03803385fc337c6886331fe696c/codegen/jni/react/renderer/components/safeareacontext/EventEmitters.cpp.o	a540e803f57355ed
+126	14710	7766003361025324	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/EventEmitters.cpp.o	4f441c76168fc648
 30764	69749	7762897629752038	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/db1199c09db454621d1b290660f71b64/cpp/react/renderer/components/rnscreens/RNSScreenStackHeaderConfigShadowNode.cpp.o	4de48ea8441e0fa1
 26908	39806	7762897325165721	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/76b790ee20e895e66ca3b752d2979c05/common/cpp/react/renderer/components/rnscreens/RNSBottomTabsState.cpp.o	25906ea1d4b2ef6
 1243	27668	7762897198145175	safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir/64f6ce0e0236ce97d6439bf7b04934de/renderer/components/safeareacontext/safeareacontextJSI-generated.cpp.o	f264af1847d35a29
@@ -45,6 +49,7 @@
 55371	67389	7762897604714042	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/7b522ea3473ab0ccbe055835ef49e31f/build/generated/source/codegen/jni/react/renderer/components/rnscreens/States.cpp.o	16272a9d40048b3
 27668	40784	7762897335396853	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/76b790ee20e895e66ca3b752d2979c05/common/cpp/react/renderer/components/rnscreens/RNSScreenStackHeaderSubviewState.cpp.o	df0fd80808b4a285
 50856	65833	7762897583819628	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/76b790ee20e895e66ca3b752d2979c05/common/cpp/react/renderer/components/rnscreens/RNSScreenState.cpp.o	44e31a40c8acc543
+116	14320	7766003356985198	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/States.cpp.o	c83f37d501f0d8e1
 47425	65653	7762897578511620	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/rnscreens.cpp.o	592fc753b42b58aa
 40785	78484	7762897716275466	rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir/4393431787ce547f36e856e6f25eb599/source/codegen/jni/react/renderer/components/rnscreens/ComponentDescriptors.cpp.o	107f186862f512c3
 85710	86334	7762897796536409	D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/arm64-v8a/libreact_codegen_rnscreens.so	bcecc6809f34bf67
@@ -55,6 +60,7 @@
 222	18586	7763861527747974	rnpicker_autolinked_build/CMakeFiles/react_codegen_rnpicker.dir/RNCAndroidDialogPickerMeasurementsManager.cpp.o	dc7108fb84825df1
 252	18598	7763861527777981	rnpicker_autolinked_build/CMakeFiles/react_codegen_rnpicker.dir/RNCAndroidDropdownPickerMeasurementsManager.cpp.o	4f84cd3dee61260c
 149	18964	7763861531663874	rnpicker_autolinked_build/CMakeFiles/react_codegen_rnpicker.dir/rnpicker.cpp.o	fa11eb61c10153f2
-2	36	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a/CMakeFiles/cmake.verify_globs	1590b9d3aeae3f9e
-1	98	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a/CMakeFiles/cmake.verify_globs	1590b9d3aeae3f9e
-2	55	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a/CMakeFiles/cmake.verify_globs	1590b9d3aeae3f9e
+87	18064	7766003394469798	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ShadowNodes.cpp.o	d77038c1aa5b68ad
+105	18333	7766003397273011	RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ComponentDescriptors.cpp.o	2b5a97a5e157f3c
+1	36	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a/CMakeFiles/cmake.verify_globs	1590b9d3aeae3f9e
+3	56	0	D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/arm64-v8a/CMakeFiles/cmake.verify_globs	1590b9d3aeae3f9e
