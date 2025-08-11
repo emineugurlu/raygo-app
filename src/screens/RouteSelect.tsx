@@ -1,3 +1,4 @@
+// src/screens/RouteSelect.tsx
 import React, { useState } from 'react';
 import {
   SafeAreaView,
@@ -9,15 +10,9 @@ import {
   StyleSheet,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-
-const COLORS = {
-  bg: '#FFFECF',          // sayfa arka planı
-  navy: '#0D2B45',        // koyu lacivert
-  blue: '#0077B6',        // mavi
-  inputBorder: '#1c6ba4',
-  inputBg: '#EDEDED',
-  white: '#FFFFFF',
-};
+import { COLORS, FONTS, FONT_SIZES, FONT_WEIGHTS } from '../constants/Styles';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { RootStackParamList } from '../navigation/AppNavigator';
 
 export default function RouteSelect() {
   const [startText, setStartText] = useState('');
@@ -28,14 +23,19 @@ export default function RouteSelect() {
   };
 
   return (
+    
     <SafeAreaView style={styles.container}>
+       {/* --- Geri Butonu (çizim ile) --- */}
+            <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+              <View style={styles.chevronLeft} />
+            </TouchableOpacity>
       {/* Logo sağ üst */}
       <Image source={require('../../assets/logo.png')} style={styles.logo} />
 
-      {/* Tren + gradyan daire (sola yaslı) */}
+      {/* Tren + gradyan daire */}
       <View style={styles.heroRow}>
         <LinearGradient
-          colors={['#003450', '#0077B6']}
+          colors={['#003450', COLORS.button]}
           start={{ x: 0.21, y: 0.21 }}
           end={{ x: 0.85, y: 0.85 }}
           style={styles.gradCircle}
@@ -43,15 +43,15 @@ export default function RouteSelect() {
           <Image
             source={require('../../assets/train.png')}
             style={styles.train}
-            resizeMode="contain"
+            resizeMode="cover"
           />
         </LinearGradient>
       </View>
 
-      {/* Form alanı — biraz aşağıda */}
+      {/* Form */}
       <View style={styles.form}>
         {/* Başlangıç */}
-        <View style={styles.inputWrapper}>
+        <View style={[styles.inputWrapper, { marginTop: 0 }]}>
           <Text style={styles.inputIcon}>🚆</Text>
           <TextInput
             value={startText}
@@ -60,10 +60,11 @@ export default function RouteSelect() {
             placeholderTextColor="#8A8A8A"
             style={styles.input}
           />
+          <MaterialIcons name="arrow-drop-down" size={24} color="#0077B6" />
         </View>
 
         {/* Bitiş */}
-        <View style={[styles.inputWrapper, { marginTop: 16 }]}>
+        <View style={[styles.inputWrapper, { marginTop: 50 }]}>
           <Text style={styles.inputIcon}>🚆</Text>
           <TextInput
             value={endText}
@@ -72,11 +73,12 @@ export default function RouteSelect() {
             placeholderTextColor="#8A8A8A"
             style={styles.input}
           />
+          
         </View>
 
         {/* Buton */}
         <TouchableOpacity style={styles.button} onPress={handleRoute}>
-          <Text style={styles.buttonText}>Rota Öner</Text>
+          <Text style={styles.buttonText}>Rota Öner →</Text>
         </TouchableOpacity>
 
         <Text style={styles.info}>
@@ -90,9 +92,9 @@ export default function RouteSelect() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.bg,
+    backgroundColor: COLORS.background,
+    paddingTop:80,
   },
-
   logo: {
     position: 'absolute',
     top: 8,
@@ -102,38 +104,36 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     zIndex: 2,
   },
-
   heroRow: {
     width: '100%',
-    paddingRight: 300,    // sola yaslama boşluğu
-    marginTop: 64,      // üstten uzaklık
+    alignItems: 'flex-start',
+    marginTop: 64,
     marginBottom: 8,
   },
   gradCircle: {
     width: 210,
     height: 210,
     borderRadius: 105,
+   
+    marginLeft: -30, // kesik görünüm efekti
     alignItems: 'center',
     justifyContent: 'center',
-    overflow: 'hidden',
   },
   train: {
-    width: 185,
-    height: 185,
-    marginLeft: -8,     // görseli hafif sola kaydır
+    width: 400, // daireden büyük
+    height: 480,
+    
   },
-
   form: {
-    marginTop: 18,      // alanları aşağı indir
+    marginTop: 90,
     paddingHorizontal: 20,
   },
-
   inputWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: COLORS.inputBg,
+    backgroundColor: '#EDEDED',
     borderWidth: 1.5,
-    borderColor: COLORS.inputBorder,
+    borderColor: '#1c6ba4',
     borderRadius: 12,
     height: 52,
     paddingHorizontal: 12,
@@ -144,13 +144,12 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    fontSize: 16,
+    fontSize: FONT_SIZES.title,
     color: '#000',
   },
-
   button: {
-    marginTop: 22,
-    backgroundColor: '#0077B6', // buton rengi koyu lacivert
+    marginTop: 50,
+    backgroundColor: COLORS.button,
     height: 54,
     borderRadius: 12,
     alignItems: 'center',
@@ -161,18 +160,31 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     elevation: 4,
   },
-  buttonText: {
-    color: COLORS.white,  // istersen lacivert yazı istiyorsan COLORS.navy yap
-    fontSize: 18,
-    fontWeight: '700',
-    letterSpacing: 0.2,
-  },
-
+ buttonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
   info: {
     textAlign: 'center',
-    marginTop: 14,
-    fontSize: 13,
-    fontWeight: '700',
-    color: '#1c1c1c',
+    marginTop: 50,
+    fontSize: 15,
+    fontWeight: FONT_WEIGHTS.bold,
+    color: '#03045E',
+    
+  },
+  backButton: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    zIndex: 10,
+    width: 32,
+    height: 32,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  chevronLeft: {
+    width: 12,
+    height: 12,
+    borderLeftWidth: 3,
+    borderBottomWidth: 3,
+    borderColor: '#1c6ba4',
+    transform: [{ rotate: '45deg' }],
   },
 });
