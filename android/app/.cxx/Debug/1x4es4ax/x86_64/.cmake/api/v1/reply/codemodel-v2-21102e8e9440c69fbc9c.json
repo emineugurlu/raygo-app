@@ -150,7 +150,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "appmodules::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-appmodules-Debug-4f00a519339fc33fa35f.json",
+					"jsonFile" : "target-appmodules-Debug-66fdfed93d6660dd4e86.json",
 					"name" : "appmodules",
 					"projectIndex" : 0
 				},
@@ -171,28 +171,28 @@
 				{
 					"directoryIndex" : 3,
 					"id" : "react_codegen_rngesturehandler_codegen::@39f233abcd2c728bc6ec",
-					"jsonFile" : "target-react_codegen_rngesturehandler_codegen-Debug-4b0c9aaf8b3212532064.json",
+					"jsonFile" : "target-react_codegen_rngesturehandler_codegen-Debug-266f059710543e4eaea9.json",
 					"name" : "react_codegen_rngesturehandler_codegen",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "react_codegen_rnpicker::@e8bb2e9e833f47d0d516",
-					"jsonFile" : "target-react_codegen_rnpicker-Debug-c5455e0cdd83e88b336f.json",
+					"jsonFile" : "target-react_codegen_rnpicker-Debug-a411c923fb4f41ae0714.json",
 					"name" : "react_codegen_rnpicker",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 5,
 					"id" : "react_codegen_rnscreens::@25bcbd507e98d3a854ad",
-					"jsonFile" : "target-react_codegen_rnscreens-Debug-9f046aae719eafea4faf.json",
+					"jsonFile" : "target-react_codegen_rnscreens-Debug-6504e18db44fc31fcc92.json",
 					"name" : "react_codegen_rnscreens",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "react_codegen_safeareacontext::@7984cd80db47aa7b952a",
-					"jsonFile" : "target-react_codegen_safeareacontext-Debug-b2933883d3eb311a83a7.json",
+					"jsonFile" : "target-react_codegen_safeareacontext-Debug-10162c88193aa4316ed0.json",
 					"name" : "react_codegen_safeareacontext",
 					"projectIndex" : 0
 				}
@@ -202,7 +202,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86",
+		"build" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64",
 		"source" : "D:/PROJECT/raygo_app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup"
 	},
 	"version" : 

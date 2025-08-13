@@ -1,5 +1,6 @@
 {
   "buildFiles": [
+    "D:\\PROJECT\\raygo_app\\node_modules\\@react-native-async-storage\\async-storage\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
     "D:\\PROJECT\\raygo_app\\node_modules\\@react-native-picker\\picker\\android\\src\\main\\jni\\CMakeLists.txt",
     "D:\\PROJECT\\raygo_app\\node_modules\\react-native-gesture-handler\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
     "D:\\PROJECT\\raygo_app\\node_modules\\react-native-safe-area-context\\android\\src\\main\\jni\\CMakeLists.txt",
@@ -64,6 +65,11 @@
         "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\jsi\\libs\\android.x86\\libjsi.so",
         "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\reactnative\\libs\\android.x86\\libreactnative.so"
       ]
+    },
+    "react_codegen_rnasyncstorage::@1596841e19ec5b9eeffe": {
+      "artifactName": "react_codegen_rnasyncstorage",
+      "abi": "x86",
+      "runtimeFiles": []
     },
     "react_codegen_rnpicker::@e8bb2e9e833f47d0d516": {
       "artifactName": "react_codegen_rnpicker",

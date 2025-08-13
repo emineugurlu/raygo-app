@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/x86_64/libappmodules.so"
+			"path" : "D:/PROJECT/raygo_app/android/app/build/intermediates/cxx/Debug/1x4es4ax/obj/x86/libappmodules.so"
 		}
 	],
 	"backtrace" : 3,
@@ -317,11 +317,11 @@
 		},
 		{
 			"backtrace" : 4,
-			"id" : "react_codegen_RNVectorIconsSpec::@479809fae146501fd34d"
+			"id" : "react_codegen_rnscreens::@25bcbd507e98d3a854ad"
 		},
 		{
 			"backtrace" : 4,
-			"id" : "react_codegen_rnscreens::@25bcbd507e98d3a854ad"
+			"id" : "react_codegen_RNVectorIconsSpec::@479809fae146501fd34d"
 		},
 		{
 			"backtrace" : 4,
@@ -334,37 +334,37 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-Wl,-z,max-page-size=16384 -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments",
+				"fragment" : "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "D:\\PROJECT\\raygo_app\\android\\app\\build\\intermediates\\cxx\\Debug\\1x4es4ax\\obj\\x86_64\\libreact_codegen_rnpicker.so",
+				"fragment" : "D:\\PROJECT\\raygo_app\\android\\app\\build\\intermediates\\cxx\\Debug\\1x4es4ax\\obj\\x86\\libreact_codegen_rnpicker.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "D:\\PROJECT\\raygo_app\\android\\app\\build\\intermediates\\cxx\\Debug\\1x4es4ax\\obj\\x86_64\\libreact_codegen_safeareacontext.so",
+				"fragment" : "D:\\PROJECT\\raygo_app\\android\\app\\build\\intermediates\\cxx\\Debug\\1x4es4ax\\obj\\x86\\libreact_codegen_safeareacontext.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "D:\\PROJECT\\raygo_app\\android\\app\\build\\intermediates\\cxx\\Debug\\1x4es4ax\\obj\\x86_64\\libreact_codegen_rnscreens.so",
+				"fragment" : "D:\\PROJECT\\raygo_app\\android\\app\\build\\intermediates\\cxx\\Debug\\1x4es4ax\\obj\\x86\\libreact_codegen_rnscreens.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\dd28153e477f01656e51c4dab7233750\\transformed\\fbjni-0.7.0\\prefab\\modules\\fbjni\\libs\\android.x86_64\\libfbjni.so",
+				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\dd28153e477f01656e51c4dab7233750\\transformed\\fbjni-0.7.0\\prefab\\modules\\fbjni\\libs\\android.x86\\libfbjni.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\jsi\\libs\\android.x86_64\\libjsi.so",
+				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\jsi\\libs\\android.x86\\libjsi.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\reactnative\\libs\\android.x86_64\\libreactnative.so",
+				"fragment" : "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\reactnative\\libs\\android.x86\\libreactnative.so",
 				"role" : "libraries"
 			},
 			{
@@ -440,127 +440,127 @@
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ComponentDescriptors.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ComponentDescriptors.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/EventEmitters.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/EventEmitters.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/Props.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/Props.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ShadowNodes.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ShadowNodes.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/States.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/States.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/rnasyncstorageJSI-generated.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/rnasyncstorageJSI-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/rnasyncstorage-generated.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/rnasyncstorage-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/ComponentDescriptors.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/ComponentDescriptors.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/EventEmitters.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/EventEmitters.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/Props.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/Props.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/ShadowNodes.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/ShadowNodes.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/States.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/States.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/bac033cd950586cef66695376748dd33/rngesturehandler_codegenJSI-generated.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/react/renderer/components/rngesturehandler_codegen/rngesturehandler_codegenJSI-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/rngesturehandler_codegen-generated.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir/rngesturehandler_codegen-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/RNVectorIconsSpec-generated.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/RNVectorIconsSpec-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ComponentDescriptors.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ComponentDescriptors.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/EventEmitters.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/EventEmitters.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/Props.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/Props.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/RNVectorIconsSpecJSI-generated.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/RNVectorIconsSpecJSI-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ShadowNodes.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ShadowNodes.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/States.cpp.o",
+			"path" : "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/States.cpp.o",
 			"sourceGroupIndex" : 1
 		}
 	],
