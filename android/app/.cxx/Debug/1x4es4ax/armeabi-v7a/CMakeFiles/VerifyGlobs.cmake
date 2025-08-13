@@ -12,6 +12,31 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/cmake.verify_globs")
 endif()
 
+# react_codegen_SRCS at D:/PROJECT/raygo_app/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/PROJECT/raygo_app/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "D:/PROJECT/raygo_app/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/rnasyncstorage-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at D:/PROJECT/raygo_app/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/PROJECT/raygo_app/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/rnasyncstorage/*.cpp")
+set(OLD_GLOB
+  "D:/PROJECT/raygo_app/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/rnasyncstorage/ComponentDescriptors.cpp"
+  "D:/PROJECT/raygo_app/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/rnasyncstorage/EventEmitters.cpp"
+  "D:/PROJECT/raygo_app/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/rnasyncstorage/Props.cpp"
+  "D:/PROJECT/raygo_app/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/rnasyncstorage/ShadowNodes.cpp"
+  "D:/PROJECT/raygo_app/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/rnasyncstorage/States.cpp"
+  "D:/PROJECT/raygo_app/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/react/renderer/components/rnasyncstorage/rnasyncstorageJSI-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
 # LIB_CUSTOM_SRCS at D:/PROJECT/raygo_app/node_modules/@react-native-picker/picker/android/src/main/jni/CMakeLists.txt:20 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/PROJECT/raygo_app/node_modules/@react-native-picker/picker/android/src/main/jni/*.cpp")
 set(OLD_GLOB
