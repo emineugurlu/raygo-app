@@ -31,7 +31,7 @@ export default function Login({ navigation }: Props) {
       {/* --- Geri Butonu (çizim ile) --- */}
       <TouchableOpacity
         style={styles.backButton}
-        onPress={() => navigation.goBack()}
+        onPress={() => navigation.navigate('Register')}
       >
         <View style={styles.chevronLeft} />
       </TouchableOpacity>

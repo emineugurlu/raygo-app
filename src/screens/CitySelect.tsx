@@ -29,7 +29,9 @@ export default function CitySelect({ navigation }: Props) {
   const handleContinue = () => {
     Alert.alert(
       'Seçimler',
-      `Şehir: ${selectedCity || 'Seçilmedi'}, Sistem: ${selectedSystem || 'Seçilmedi'}`
+      `Şehir: ${selectedCity || 'Seçilmedi'}, Sistem: ${
+        selectedSystem || 'Seçilmedi'
+      }`
     );
   };
 
@@ -37,16 +39,37 @@ export default function CitySelect({ navigation }: Props) {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* --- Geri Butonu (çizim ile) --- */}
-      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+      {/* --- Geri Butonu (Login sayfasına gidecek) --- */}
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.navigate('Login')}
+      >
         <View style={styles.chevronLeft} />
       </TouchableOpacity>
 
       {/* Üst sol kareler */}
       <View style={styles.topLeftSquares}>
-        <View style={[styles.square, styles.squareLarge, { backgroundColor: '#0D2B45', marginRight: 15, marginBottom: 25 }]} />
-        <View style={[styles.square, styles.squareMedium, { backgroundColor: '#145C9E', marginLeft: -40 }]} />
-        <View style={[styles.square, styles.squareSmall, { backgroundColor: '#0D2B45', marginLeft: -20 }]} />
+        <View
+          style={[
+            styles.square,
+            styles.squareLarge,
+            { backgroundColor: '#0D2B45', marginRight: 15, marginBottom: 25 },
+          ]}
+        />
+        <View
+          style={[
+            styles.square,
+            styles.squareMedium,
+            { backgroundColor: '#145C9E', marginLeft: -40 },
+          ]}
+        />
+        <View
+          style={[
+            styles.square,
+            styles.squareSmall,
+            { backgroundColor: '#0D2B45', marginLeft: -20 },
+          ]}
+        />
       </View>
 
       {/* Logo */}
@@ -54,39 +77,83 @@ export default function CitySelect({ navigation }: Props) {
 
       {/* İçerik */}
       <View style={styles.content}>
-        {/* Şehir seçimi (custom dropdown) */}
-        <TouchableOpacity style={styles.pickerWrapper} activeOpacity={0.8} onPress={() => setCityOpen(true)}>
+        {/* Şehir seçimi */}
+        <TouchableOpacity
+          style={styles.pickerWrapper}
+          activeOpacity={0.8}
+          onPress={() => setCityOpen(true)}
+        >
           <Text style={styles.icon}>🏙</Text>
-          <Text style={[styles.pickerText, !selectedCity && styles.placeholderText]}>
+          <Text
+            style={[
+              styles.pickerText,
+              !selectedCity && styles.placeholderText,
+            ]}
+          >
             {selectedCity || 'Şehir Seçiniz'}
           </Text>
           {renderArrow()}
         </TouchableOpacity>
 
-        {/* Sistem seçimi (custom dropdown) */}
-        <TouchableOpacity style={[styles.pickerWrapper, { marginTop: 20 }]} activeOpacity={0.8} onPress={() => setSystemOpen(true)}>
+        {/* Sistem seçimi */}
+        <TouchableOpacity
+          style={[styles.pickerWrapper, { marginTop: 20 }]}
+          activeOpacity={0.8}
+          onPress={() => setSystemOpen(true)}
+        >
           <Text style={styles.icon}>🚆</Text>
-          <Text style={[styles.pickerText, !selectedSystem && styles.placeholderText]}>
+          <Text
+            style={[
+              styles.pickerText,
+              !selectedSystem && styles.placeholderText,
+            ]}
+          >
             {selectedSystem || 'Sistem Seçiniz'}
           </Text>
           {renderArrow()}
         </TouchableOpacity>
 
         {/* Devam Et butonu */}
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RouteSelect')}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('RouteSelect')}
+        >
           <Text style={styles.buttonText}>Devam Et →</Text>
         </TouchableOpacity>
       </View>
 
       {/* Alt sağ kareler */}
       <View style={styles.bottomRightSquares}>
-        <View style={[styles.square, styles.squareLarge, { backgroundColor: '#145C9E' }]} />
-        <View style={[styles.square, styles.squareMedium, { backgroundColor: '#0D2B45', marginRight: -20, marginTop: 40 }]} />
-        <View style={[styles.square, styles.squareSmall, { backgroundColor: '#145C9E', marginRight: -20, marginTop: 80 }]} />
+        <View
+          style={[
+            styles.square,
+            styles.squareLarge,
+            { backgroundColor: '#145C9E' },
+          ]}
+        />
+        <View
+          style={[
+            styles.square,
+            styles.squareMedium,
+            { backgroundColor: '#0D2B45', marginRight: -20, marginTop: 40 },
+          ]}
+        />
+        <View
+          style={[
+            styles.square,
+            styles.squareSmall,
+            { backgroundColor: '#145C9E', marginRight: -20, marginTop: 80 },
+          ]}
+        />
       </View>
 
       {/* Şehir Modal */}
-      <Modal visible={cityOpen} transparent animationType="fade" onRequestClose={() => setCityOpen(false)}>
+      <Modal
+        visible={cityOpen}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setCityOpen(false)}
+      >
         <View style={styles.modalBackdrop}>
           <View style={styles.modalCard}>
             <Text style={styles.modalTitle}>Şehir Seçiniz</Text>
@@ -104,7 +171,10 @@ export default function CitySelect({ navigation }: Props) {
                 </TouchableOpacity>
               ))}
             </ScrollView>
-            <TouchableOpacity style={styles.modalClose} onPress={() => setCityOpen(false)}>
+            <TouchableOpacity
+              style={styles.modalClose}
+              onPress={() => setCityOpen(false)}
+            >
               <Text style={styles.modalCloseText}>Kapat</Text>
             </TouchableOpacity>
           </View>
@@ -112,7 +182,12 @@ export default function CitySelect({ navigation }: Props) {
       </Modal>
 
       {/* Sistem Modal */}
-      <Modal visible={systemOpen} transparent animationType="fade" onRequestClose={() => setSystemOpen(false)}>
+      <Modal
+        visible={systemOpen}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setSystemOpen(false)}
+      >
         <View style={styles.modalBackdrop}>
           <View style={styles.modalCard}>
             <Text style={styles.modalTitle}>Sistem Seçiniz</Text>
@@ -130,7 +205,10 @@ export default function CitySelect({ navigation }: Props) {
                 </TouchableOpacity>
               ))}
             </ScrollView>
-            <TouchableOpacity style={styles.modalClose} onPress={() => setSystemOpen(false)}>
+            <TouchableOpacity
+              style={styles.modalClose}
+              onPress={() => setSystemOpen(false)}
+            >
               <Text style={styles.modalCloseText}>Kapat</Text>
             </TouchableOpacity>
           </View>
@@ -224,7 +302,7 @@ const styles = StyleSheet.create({
   },
   buttonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
 
-  // Geri butonu (çizim ile)
+  // Geri butonu
   backButton: {
     position: 'absolute',
     top: 20,

@@ -1,5 +1,5 @@
 // src/screens/Register.tsx
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
   SafeAreaView, View, Text, TextInput, TouchableOpacity, Image, StyleSheet,
   Modal, Pressable, ScrollView
@@ -17,6 +17,7 @@ export default function Register({ navigation }: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordAgain, setPasswordAgain] = useState('');
+
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [passwordVisible2, setPasswordVisible2] = useState(false);
   const [checked, setChecked] = useState(false);
@@ -25,22 +26,106 @@ export default function Register({ navigation }: Props) {
   // Gizlilik modalı
   const [policyVisible, setPolicyVisible] = useState(false);
 
+  // Şifre Öner popover
+  const [suggestVisible, setSuggestVisible] = useState(false);
+  const [suggestedPassword, setSuggestedPassword] = useState('');
+  const [suggestVisibleEye, setSuggestVisibleEye] = useState(false);
+
+  // --- Validation helpers ---
+  const isValidEmail = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.trim());
+
+  const passwordChecks = useMemo(() => {
+    const p = password;
+    return {
+      length: p.length >= 10,
+      upper: /[A-Z]/.test(p),
+      lower: /[a-z]/.test(p),
+      digit: /\d/.test(p),
+      special: /[!@#$%^&*()_\-+{}\[\]:;"'<>,.?/\\|`~]/.test(p),
+    };
+  }, [password]);
+
+  const isStrongPassword = useMemo(
+    () =>
+      passwordChecks.length &&
+      passwordChecks.upper &&
+      passwordChecks.lower &&
+      passwordChecks.digit &&
+      passwordChecks.special,
+    [passwordChecks]
+  );
+
+  const generateStrongPassword = () => {
+    const upper = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+    const lower = 'abcdefghijkmnopqrstuvwxyz';
+    const digits = '23456789';
+    const special = '!@#$%^&*()-_=+[]{}<>?';
+    const all = upper + lower + digits + special;
+
+    const pick = (set: string, n = 1) =>
+      Array.from({ length: n }, () => set[Math.floor(Math.random() * set.length)]).join('');
+
+    let candidate = pick(upper) + pick(lower) + pick(digits) + pick(special);
+    const targetLen = 14;
+    while (candidate.length < targetLen) candidate += pick(all);
+    candidate = candidate.split('').sort(() => Math.random() - 0.5).join('');
+
+    setSuggestedPassword(candidate);
+    setSuggestVisibleEye(false);
+  };
+
+  const openSuggest = () => {
+    generateStrongPassword();
+    setSuggestVisible(true); // küçük popover aç
+  };
+
+  const useSuggested = () => {
+    setPassword(suggestedPassword);
+    setPasswordAgain(suggestedPassword);
+    setPasswordVisible(true);
+    setPasswordVisible2(true);
+    setSuggestVisible(false);
+  };
+
+  const canSubmit =
+    name.trim().length > 0 &&
+    isValidEmail(email) &&
+    isStrongPassword &&
+    password === passwordAgain &&
+    checked;
+
   const handleRegister = async () => {
     setError(null);
-    if (!name || !email || !password || !passwordAgain) return setError('Tüm alanları doldurun');
-    if (password !== passwordAgain) return setError('Şifreler uyuşmuyor');
-    if (!checked) return setError('Gizlilik politikasını kabul etmelisiniz.');
+
+    const trimmedEmail = email.trim();
+    const trimmedName = name.trim();
+
+    if (!trimmedName || !trimmedEmail || !password || !passwordAgain) {
+      return setError('Tüm alanları doldurun');
+    }
+    if (!isValidEmail(trimmedEmail)) {
+      return setError('Lütfen geçerli bir e-posta adresi girin (ör. ad@alan.com)');
+    }
+    if (password !== passwordAgain) {
+      return setError('Şifreler uyuşmuyor');
+    }
+    if (!isStrongPassword) {
+      return setError('Şifre güçlü değil. Lütfen özel karakter, büyük/küçük harf ve rakam kullanın.');
+    }
+    if (!checked) {
+      return setError('Gizlilik politikasını kabul etmelisiniz.');
+    }
 
     try {
-      // Önce mevcut kullanıcıyı kontrol et
-      const methods = await firebaseAuth.fetchSignInMethodsForEmail(email.trim());
+      // Bu e-posta ile hesap var mı?
+      const methods = await firebaseAuth.fetchSignInMethodsForEmail(trimmedEmail);
       if (methods.length > 0) {
         return setError('Bu e-posta ile zaten bir hesap var.');
       }
 
-      await firebaseAuth.createUserWithEmailAndPassword(email.trim(), password);
+      await firebaseAuth.createUserWithEmailAndPassword(trimmedEmail, password);
       if (firebaseAuth.currentUser) {
-        await firebaseAuth.currentUser.updateProfile({ displayName: name.trim() });
+        await firebaseAuth.currentUser.updateProfile({ displayName: trimmedName });
       }
       navigation.replace('Login');
     } catch (err: any) {
@@ -51,12 +136,12 @@ export default function Register({ navigation }: Props) {
   return (
     <SafeAreaView style={styles.container}>
       {/* --- Geri Butonu (çizim ile) --- */}
-      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Onboarding4')}>
         <View style={styles.chevronLeft} />
       </TouchableOpacity>
 
       {/* Arka plan baloncuklar */}
-      <View style={StyleSheet.absoluteFill} pointerEvents="none">
+      <View style={StyleSheet.absoluteFillObject} pointerEvents="none">
         <View style={[styles.circleLargeDark, { top: -160, left: -100 }]} />
         <View style={[styles.circleSmallBlue, { top: -20, right: -20 }]} />
         <View style={[styles.circleLargeDark, { bottom: -150, right: -110 }]} />
@@ -66,6 +151,7 @@ export default function Register({ navigation }: Props) {
       <View style={styles.content}>
         <Image source={require('../../assets/logo.png')} style={styles.logo} />
 
+        {/* Ad Soyad */}
         <View style={styles.inputContainer}>
           <Text style={styles.icon}>👤</Text>
           <TextInput
@@ -77,11 +163,12 @@ export default function Register({ navigation }: Props) {
           />
         </View>
 
+        {/* E-posta */}
         <View style={styles.inputContainer}>
           <Text style={styles.icon}>📧</Text>
           <TextInput
             style={styles.input}
-            placeholder="E- Posta"
+            placeholder="E-posta"
             placeholderTextColor="#666"
             value={email}
             onChangeText={setEmail}
@@ -92,7 +179,13 @@ export default function Register({ navigation }: Props) {
             inputMode="email"
           />
         </View>
+        {email.length > 0 && !isValidEmail(email) && (
+          <Text style={styles.helperWarn}>
+            Geçerli bir e-posta formatı girin (örn. isim@alan.com)
+          </Text>
+        )}
 
+        {/* Şifre */}
         <View style={styles.inputContainer}>
           <Text style={styles.icon}>🔒</Text>
           <TextInput
@@ -109,6 +202,21 @@ export default function Register({ navigation }: Props) {
           </TouchableOpacity>
         </View>
 
+        {/* Şifre ipucu + Şifre Öner butonu (satır sabit, ekran kaymaz) */}
+        <View style={styles.passwordHintRow}>
+          {!isStrongPassword ? (
+            <Text style={styles.helperHint}>
+              Daha güçlü şifre için özel karakter, büyük/küçük harf ve rakam kullanın.
+            </Text>
+          ) : (
+            <Text style={[styles.helperHint, { color: '#2e7d32' }]}>Şifreniz güçlü görünüyor.</Text>
+          )}
+          <TouchableOpacity onPress={openSuggest} style={styles.suggestInlineBtn}>
+            <Text style={styles.suggestInlineText}>Şifre Öner</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Şifreyi Tekrar */}
         <View style={styles.inputContainer}>
           <Text style={styles.icon}>🔒</Text>
           <TextInput
@@ -134,10 +242,7 @@ export default function Register({ navigation }: Props) {
             style={{ marginRight: 8 }}
           />
           <Text style={styles.privacyText}>
-            <Text
-              style={styles.privacyLink}
-              onPress={() => setPolicyVisible(true)}
-            >
+            <Text style={styles.privacyLink} onPress={() => setPolicyVisible(true)}>
               Gizlilik politikası
             </Text>{' '}
             okudum, kabul ediyorum.
@@ -146,7 +251,11 @@ export default function Register({ navigation }: Props) {
 
         {error ? <Text style={styles.error}>{error}</Text> : null}
 
-        <TouchableOpacity style={styles.button} onPress={handleRegister}>
+        <TouchableOpacity
+          style={[styles.button, !canSubmit && { opacity: 0.6 }]}
+          onPress={handleRegister}
+          disabled={!canSubmit}
+        >
           <Text style={styles.buttonText}>Kayıt Ol</Text>
         </TouchableOpacity>
 
@@ -192,6 +301,46 @@ export default function Register({ navigation }: Props) {
             <TouchableOpacity style={styles.modalBtn} onPress={() => setPolicyVisible(false)}>
               <Text style={styles.modalBtnText}>Kapat</Text>
             </TouchableOpacity>
+          </Pressable>
+        </Pressable>
+      </Modal>
+
+      {/* ---- Popover: Şifre Öner ---- */}
+      <Modal
+        visible={suggestVisible}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setSuggestVisible(false)}
+      >
+        <Pressable style={styles.suggestBackdrop} onPress={() => setSuggestVisible(false)}>
+          <Pressable style={styles.suggestCard}>
+            <View style={styles.suggestHeader}>
+              <Text style={styles.suggestTitle}>Şifre öner</Text>
+            </View>
+
+            <View style={styles.suggestBody}>
+              <Text style={styles.suggestPassword}>
+                {suggestVisibleEye ? suggestedPassword : '•'.repeat(Math.max(8, suggestedPassword.length))}
+              </Text>
+              <TouchableOpacity onPress={() => setSuggestVisibleEye(v => !v)}>
+                <Text style={styles.suggestEye}>{suggestVisibleEye ? '🙈' : '👁️'}</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.suggestActions}>
+              <TouchableOpacity onPress={generateStrongPassword} style={[styles.smallBtn, { backgroundColor: '#e9eef6' }]}>
+                <Text style={[styles.smallBtnText, { color: COLORS.button }]}>Yenile</Text>
+              </TouchableOpacity>
+
+              <View style={{ flex: 1 }} />
+
+              <TouchableOpacity onPress={() => setSuggestVisible(false)} style={[styles.smallBtn, { backgroundColor: '#e0e0e0' }]}>
+                <Text style={[styles.smallBtnText, { color: '#333' }]}>Kapat</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={useSuggested} style={[styles.smallBtn, { backgroundColor: COLORS.button, marginLeft: 8 }]}>
+                <Text style={[styles.smallBtnText, { color: '#fff' }]}>Kullan</Text>
+              </TouchableOpacity>
+            </View>
           </Pressable>
         </Pressable>
       </Modal>
@@ -246,6 +395,36 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.bold,
     color: COLORS.text,
   },
+
+  helperWarn: {
+    color: '#d9534f',
+    fontSize: 12,
+    marginTop: 4,
+    fontWeight: '500',
+    alignSelf: 'flex-start',
+  },
+
+  // Şifre ipucu satırı
+  passwordHintRow: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: -6, // giriş kutusuna daha yakın dursun; ekran kaymaz
+    marginBottom: 8,
+  },
+  helperHint: {
+    flex: 1,
+    color: '#8a8a8a',
+    fontSize: 12.5,
+  },
+  suggestInlineBtn: {
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    backgroundColor: COLORS.button,
+    marginLeft: 8,
+  },
+  suggestInlineText: { color: '#fff', fontWeight: '700', fontSize: 12.5 },
 
   privacyContainer: {
     flexDirection: 'row',
@@ -311,6 +490,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 
+  // Back
   backButton: {
     position: 'absolute',
     top: 20,
@@ -329,4 +509,57 @@ const styles = StyleSheet.create({
     borderColor: '#1c6ba4',
     transform: [{ rotate: '45deg' }]
   },
+
+  // Suggest popover styles
+  suggestBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.15)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 24,
+  },
+  suggestCard: {
+    width: '92%',
+    maxWidth: 420,
+    backgroundColor: '#1f2630',
+    borderRadius: 12,
+    padding: 12,
+    shadowColor: '#000',
+    shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 8 },
+    shadowRadius: 16,
+    elevation: 8,
+  },
+  suggestHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  suggestTitle: { color: '#fff', fontSize: 16, fontWeight: '700' },
+  suggestBody: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#0f141a',
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+  },
+  suggestPassword: {
+    flex: 1,
+    color: '#fff',
+    fontSize: 16,
+    letterSpacing: 1,
+  },
+  suggestEye: { fontSize: 20, marginLeft: 10 },
+  suggestActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  smallBtn: {
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+  },
+  smallBtnText: { fontWeight: '700' },
 });

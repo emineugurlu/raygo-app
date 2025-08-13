@@ -26,7 +26,7 @@ export default function Onboarding4({ navigation }: Props) {
       {/* Geri butonu */}
       <TouchableOpacity
         style={styles.backButton}
-        onPress={() => navigation.goBack()}
+        onPress={() => navigation.navigate('Onboarding3')}
       >
         <View style={styles.chevronLeft} />
       </TouchableOpacity>

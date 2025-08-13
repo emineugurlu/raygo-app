@@ -29,7 +29,7 @@ export default function Onboarding2({ navigation }: Props) {
       {/* Geri butonu */}
       <TouchableOpacity
         style={styles.backButton}
-        onPress={() => navigation.goBack()}
+        onPress={() => navigation.navigate('Onboarding1')}
       >
         <View style={styles.chevronLeft} />
       </TouchableOpacity>
