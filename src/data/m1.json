@@ -1,0 +1,24 @@
+{
+  "id": "M1",
+  "name": "M1 Yenikapı – Atatürk Havalimanı / Kirazlı",
+  "color": "#E30613",
+  "side": "Avrupa",
+  "branches": {
+    "M1A": {
+      "name": "M1A Yenikapı – Atatürk Havalimanı",
+      "stations": [
+        { "id": "yenikapi", "name": "Yenikapı", "coordinates": { "lat": 0, "lng": 0 }, "district": "Fatih", "connections": ["aksaray"] },
+        { "id": "aksaray", "name": "Aksaray", "coordinates": { "lat": 0, "lng": 0 }, "district": "Fatih", "connections": ["yenikapi","emniyet_fatih"] },
+        { "id": "emniyet_fatih", "name": "Emniyet - Fatih", "coordinates": { "lat": 0, "lng": 0 }, "district": "Fatih", "connections": ["aksaray","topkapi_ulubatli"] }
+        
+      ]
+    },
+    "M1B": {
+      "name": "M1B Yenikapı – Kirazlı",
+      "stations": [
+        { "id": "yenikapi", "name": "Yenikapı", "coordinates": { "lat": 0, "lng": 0 }, "district": "Fatih", "connections": ["aksaray"] }
+      
+      ]
+    }
+  }
+}

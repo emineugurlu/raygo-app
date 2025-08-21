@@ -3,6 +3,7 @@
   "prefabPath": "C:\\Users\\ugurl\\.gradle\\caches\\modules-2\\files-2.1\\com.google.prefab\\cli\\2.1.0\\aa32fec809c44fa531f01dcfb739b5b3304d3050\\cli-2.1.0-all.jar",
   "packages": [
     "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab",
+    "D:\\PROJECT\\raygo_app\\node_modules\\react-native-reanimated\\android\\build\\intermediates\\prefab_package\\debug\\prefab",
     "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\bb95414cc9021121e623c7659f026eb6\\transformed\\hermes-android-0.80.2-debug\\prefab",
     "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\dd28153e477f01656e51c4dab7233750\\transformed\\fbjni-0.7.0\\prefab"
   ]

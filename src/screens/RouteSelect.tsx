@@ -1,180 +1,112 @@
 import React, { useEffect, useState } from 'react';
 import {
-  SafeAreaView,
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  StyleSheet,
-  Modal,
-  ScrollView,
-  ActivityIndicator,
-  Alert,
+  SafeAreaView, View, Text, TouchableOpacity, Image, StyleSheet, Modal, ScrollView, ActivityIndicator,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { COLORS, FONT_SIZES, FONT_WEIGHTS } from '../constants/Styles';
+import { COLORS, FONT_WEIGHTS } from '../constants/Styles';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigation/AppNavigator';
 
+const STATIONS = [
+  { id: 'yenikapi', name: 'Yenikapı' },
+  { id: 'aksaray', name: 'Aksaray' },
+  { id: 'emniyet', name: 'Emniyet - Fatih' },
+];
+
 type Props = StackScreenProps<RootStackParamList, 'RouteSelect'>;
+type Station = { id: string; name: string };
 
-type District = { id: string; name: string };
+export default function RouteSelect({ navigation, route }: Props) {
+  const { selectedCity, selectedSystem } = route.params;
 
-export default function RouteSelect({ navigation }: Props) {
-  const [districts, setDistricts] = useState<District[]>([]);
-  const [startDistrict, setStartDistrict] = useState('');
-  const [endDistrict, setEndDistrict] = useState('');
+  const [stations, setStations] = useState<Station[]>([]);
+  const [startStation, setStartStation] = useState('');
+  const [endStation, setEndStation] = useState('');
   const [loading, setLoading] = useState(false);
 
   const [startOpen, setStartOpen] = useState(false);
   const [endOpen, setEndOpen] = useState(false);
 
+  // 🔵 Alert
+  const [alertVisible, setAlertVisible] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+
   useEffect(() => {
-    const fetchDistricts = async () => {
-      try {
-        setLoading(true);
-        // Mock veri
-        const data: District[] = [
-          { id: '1', name: 'Kadıköy' },
-          { id: '2', name: 'Üsküdar' },
-          { id: '3', name: 'Beşiktaş' },
-          { id: '4', name: 'Fatih' },
-          { id: '5', name: 'Bakırköy' },
-          { id: '6', name: 'Şişli' },
-        ];
-        setDistricts(data);
-      } catch (error) {
-        Alert.alert('Hata', 'İlçeler yüklenemedi.');
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchDistricts();
+    setLoading(true);
+    setStations(STATIONS);
+    setLoading(false);
   }, []);
 
   const handleRoute = () => {
-    if (!startDistrict || !endDistrict) {
-      Alert.alert('Uyarı', 'Lütfen başlangıç ve bitiş ilçelerini seçiniz.');
+    if (!startStation || !endStation) {
+      setAlertMessage('Lütfen başlangıç ve bitiş duraklarını seçiniz.');
+      setAlertVisible(true);
       return;
     }
-    Alert.alert(
-      'Seçimler',
-      `Başlangıç: ${startDistrict}\nBitiş: ${endDistrict}`
-    );
+    if (startStation === endStation) {
+      setAlertMessage('Başlangıç ve bitiş durakları aynı olamaz.');
+      setAlertVisible(true);
+      return;
+    }
+    navigation.navigate('RouteResult', { startStation, endStation, selectedCity, selectedSystem });
   };
 
+  const canProceed = !!startStation && !!endStation && startStation !== endStation;
   const renderArrow = () => <View style={styles.arrowDown} />;
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Geri Butonu */}
-      <TouchableOpacity
-        style={styles.backButton}
-        onPress={() => navigation.navigate('CitySelect')}
-      >
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('CitySelect')}>
         <View style={styles.chevronLeft} />
       </TouchableOpacity>
 
-      {/* Logo */}
       <Image source={require('../../assets/logo.png')} style={styles.logo} />
 
-      {/* Tren + gradyan daire */}
       <View style={styles.heroRow}>
-        <LinearGradient
-          colors={['#003450', COLORS.button]}
-          start={{ x: 0.21, y: 0.21 }}
-          end={{ x: 0.85, y: 0.85 }}
-          style={styles.gradCircle}
-        >
-          <Image
-            source={require('../../assets/train.png')}
-            style={styles.train}
-            resizeMode="cover"
-          />
+        <LinearGradient colors={['#003450', COLORS.button]} start={{ x: 0.21, y: 0.21 }} end={{ x: 0.85, y: 0.85 }} style={styles.gradCircle}>
+          <Image source={require('../../assets/train.png')} style={styles.train} resizeMode="cover" />
         </LinearGradient>
       </View>
 
-      {/* Form */}
       <View style={styles.form}>
-        {/* Başlangıç İlçesi */}
-        <TouchableOpacity
-          style={styles.dropdownButton}
-          onPress={() => setStartOpen(true)}
-          activeOpacity={0.8}
-        >
+        <TouchableOpacity style={styles.dropdownButton} onPress={() => setStartOpen(true)} activeOpacity={0.8}>
           <Text style={styles.dropdownIcon}>🚆</Text>
-          <Text
-            style={[
-              styles.dropdownText,
-              !startDistrict && styles.placeholderText,
-            ]}
-          >
-            {startDistrict || 'Başlangıç İlçesi Seçiniz'}
+          <Text style={[styles.dropdownText, !startStation && styles.placeholderText]}>
+            {startStation || 'Başlangıç Durağı Seçiniz'}
           </Text>
           {renderArrow()}
         </TouchableOpacity>
 
-        {/* Bitiş İlçesi */}
-        <TouchableOpacity
-          style={[styles.dropdownButton, { marginTop: 35 }]} // boşluk artırıldı
-          onPress={() => setEndOpen(true)}
-          activeOpacity={0.8}
-        >
+        <TouchableOpacity style={[styles.dropdownButton, { marginTop: 35 }]} onPress={() => setEndOpen(true)} activeOpacity={0.8}>
           <Text style={styles.dropdownIcon}>🏁</Text>
-          <Text
-            style={[
-              styles.dropdownText,
-              !endDistrict && styles.placeholderText,
-            ]}
-          >
-            {endDistrict || 'Bitiş İlçesi Seçiniz'}
+          <Text style={[styles.dropdownText, !endStation && styles.placeholderText]}>
+            {endStation || 'Bitiş Durağı Seçiniz'}
           </Text>
           {renderArrow()}
         </TouchableOpacity>
 
-        {/* Buton */}
-        <TouchableOpacity style={styles.button} onPress={handleRoute}>
+        <TouchableOpacity style={[styles.button, !canProceed && { opacity: 0.5 }]} onPress={handleRoute} disabled={!canProceed}>
           <Text style={styles.buttonText}>Rota Öner →</Text>
         </TouchableOpacity>
 
-        {/* Bilgilendirme yazısı */}
-        <Text style={styles.infoText}>
-          Başlangıç ve varış noktalarını gir, sana en hızlı güzergahı önerelim!
-        </Text>
+        <Text style={styles.infoText}>Şehir: {selectedCity} • Sistem: {selectedSystem}</Text>
       </View>
 
       {/* Başlangıç Modal */}
-      <Modal
-        visible={startOpen}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setStartOpen(false)}
-      >
+      <Modal visible={startOpen} transparent animationType="fade" onRequestClose={() => setStartOpen(false)}>
         <View style={styles.modalBackdrop}>
           <View style={styles.modalCard}>
-            <Text style={styles.modalTitle}>Başlangıç İlçesi</Text>
-            {loading ? (
-              <ActivityIndicator />
-            ) : (
+            <Text style={styles.modalTitle}>Başlangıç Durağı</Text>
+            {loading ? <ActivityIndicator /> : (
               <ScrollView>
-                {districts.map((d) => (
-                  <TouchableOpacity
-                    key={d.id}
-                    style={styles.modalItem}
-                    onPress={() => {
-                      setStartDistrict(d.name);
-                      setStartOpen(false);
-                    }}
-                  >
-                    <Text style={styles.modalItemText}>{d.name}</Text>
+                {stations.map((s) => (
+                  <TouchableOpacity key={s.id} style={styles.modalItem} onPress={() => { setStartStation(s.name); setStartOpen(false); }}>
+                    <Text style={styles.modalItemText}>{s.name}</Text>
                   </TouchableOpacity>
                 ))}
               </ScrollView>
             )}
-            <TouchableOpacity
-              style={styles.modalClose}
-              onPress={() => setStartOpen(false)}
-            >
+            <TouchableOpacity style={styles.modalClose} onPress={() => setStartOpen(false)}>
               <Text style={styles.modalCloseText}>Kapat</Text>
             </TouchableOpacity>
           </View>
@@ -182,38 +114,34 @@ export default function RouteSelect({ navigation }: Props) {
       </Modal>
 
       {/* Bitiş Modal */}
-      <Modal
-        visible={endOpen}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setEndOpen(false)}
-      >
+      <Modal visible={endOpen} transparent animationType="fade" onRequestClose={() => setEndOpen(false)}>
         <View style={styles.modalBackdrop}>
           <View style={styles.modalCard}>
-            <Text style={styles.modalTitle}>Bitiş İlçesi</Text>
-            {loading ? (
-              <ActivityIndicator />
-            ) : (
+            <Text style={styles.modalTitle}>Bitiş Durağı</Text>
+            {loading ? <ActivityIndicator /> : (
               <ScrollView>
-                {districts.map((d) => (
-                  <TouchableOpacity
-                    key={d.id}
-                    style={styles.modalItem}
-                    onPress={() => {
-                      setEndDistrict(d.name);
-                      setEndOpen(false);
-                    }}
-                  >
-                    <Text style={styles.modalItemText}>{d.name}</Text>
+                {stations.map((s) => (
+                  <TouchableOpacity key={s.id} style={styles.modalItem} onPress={() => { setEndStation(s.name); setEndOpen(false); }}>
+                    <Text style={styles.modalItemText}>{s.name}</Text>
                   </TouchableOpacity>
                 ))}
               </ScrollView>
             )}
-            <TouchableOpacity
-              style={styles.modalClose}
-              onPress={() => setEndOpen(false)}
-            >
+            <TouchableOpacity style={styles.modalClose} onPress={() => setEndOpen(false)}>
               <Text style={styles.modalCloseText}>Kapat</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+
+      {/* 🔵 Custom Alert */}
+      <Modal visible={alertVisible} transparent animationType="fade" onRequestClose={() => setAlertVisible(false)}>
+        <View style={styles.modalBackdrop}>
+          <View style={styles.alertCard}>
+            <Text style={styles.alertTitle}>Uyarı</Text>
+            <Text style={styles.alertMessage}>{alertMessage}</Text>
+            <TouchableOpacity style={styles.alertButton} onPress={() => setAlertVisible(false)}>
+              <Text style={styles.alertButtonText}>OK</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -223,128 +151,35 @@ export default function RouteSelect({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: COLORS.background, paddingTop: 80 },
-  logo: {
-    position: 'absolute',
-    top: 8,
-    right: 12,
-    width: 78,
-    height: 78,
-    resizeMode: 'contain',
-    zIndex: 2,
-  },
-  heroRow: {
-    width: '100%',
-    alignItems: 'flex-start',
-    marginTop: 64,
-    marginBottom: 8,
-  },
-  gradCircle: {
-    width: 210,
-    height: 210,
-    borderRadius: 105,
-    marginLeft: -30,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  train: { width: 400, height: 480 },
-  form: { marginTop: 60, paddingHorizontal: 20 },
-  dropdownButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1.5,
-    borderColor: '#1c6ba4',
-    borderRadius: 25,
-    backgroundColor: '#f0f0f0',
-    paddingHorizontal: 10,
-    height: 50,
-  },
-  dropdownIcon: {
-    fontSize: 20,
-    marginRight: 8,
-  },
+  container: { flex: 1, backgroundColor: '#fffecf' },
+  backButton: { position: 'absolute', top: 20, left: 20, zIndex: 10, width: 32, height: 32, justifyContent: 'center', alignItems: 'center' },
+  chevronLeft: { width: 12, height: 12, borderLeftWidth: 3, borderBottomWidth: 3, borderColor: '#1c6ba4', transform: [{ rotate: '45deg' }] },
+  logo: { position: 'absolute', top: 0, right: 15, width: 81, height: 81, resizeMode: 'contain', zIndex: 2 },
+  heroRow: { marginTop: 130, justifyContent: 'center', alignItems: 'center' },
+  gradCircle: { width: 180, height: 180, borderRadius: 90, justifyContent: 'center', alignItems: 'center' },
+  train: { width: 120, height: 120 },
+  form: { flex: 1, paddingHorizontal: 30, paddingTop: 50 },
+  dropdownButton: { flexDirection: 'row', alignItems: 'center', borderWidth: 1.5, borderColor: '#145C9E', borderRadius: 25, backgroundColor: '#f0f0f0', paddingHorizontal: 10, height: 50 },
   dropdownText: { flex: 1, fontSize: 16, color: '#333' },
   placeholderText: { color: '#777' },
-  arrowDown: {
-    width: 0,
-    height: 0,
-    marginLeft: 4,
-    borderLeftWidth: 6,
-    borderRightWidth: 6,
-    borderTopWidth: 8,
-    borderLeftColor: 'transparent',
-    borderRightColor: 'transparent',
-    borderTopColor: '#145C9E',
-  },
-  button: {
-    backgroundColor: COLORS.button,
-    paddingVertical: 12,
-    borderRadius: 25,
-    marginTop: 40,
-    alignItems: 'center',
-  },
+  dropdownIcon: { fontSize: 20, marginRight: 8 },
+  arrowDown: { width: 0, height: 0, marginLeft: 4, borderLeftWidth: 6, borderRightWidth: 6, borderTopWidth: 8, borderLeftColor: 'transparent', borderRightColor: 'transparent', borderTopColor: '#145C9E' },
+  button: { backgroundColor: '#0077B6', paddingVertical: 12, borderRadius: 25, marginTop: 50, alignItems: 'center', elevation: 3 },
   buttonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
-  infoText: {
-    marginTop: 20,
-    textAlign: 'center',
-    fontSize: 14,
-    color: '#03045E',
-    fontWeight: FONT_WEIGHTS.bold,
-  },
-  backButton: {
-    position: 'absolute',
-    top: 20,
-    left: 20,
-    zIndex: 10,
-    width: 32,
-    height: 32,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  chevronLeft: {
-    width: 12,
-    height: 12,
-    borderLeftWidth: 3,
-    borderBottomWidth: 3,
-    borderColor: '#1c6ba4',
-    transform: [{ rotate: '45deg' }],
-  },
-  modalBackdrop: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.25)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 24,
-  },
-  modalCard: {
-    width: '100%',
-    maxHeight: '70%',
-    backgroundColor: '#fff',
-    borderRadius: 16,
-    padding: 16,
-    borderWidth: 1,
-    borderColor: '#145C9E',
-  },
-  modalTitle: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: '#145C9E',
-    marginBottom: 12,
-    textAlign: 'center',
-  },
-  modalItem: {
-    paddingVertical: 12,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#e3e3e3',
-  },
+  infoText: { marginTop: 20, fontSize: 14, color: '#555', textAlign: 'center' },
+
+  modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.25)', justifyContent: 'center', alignItems: 'center', paddingHorizontal: 24 },
+  modalCard: { width: '100%', maxHeight: '70%', backgroundColor: '#fff', borderRadius: 16, padding: 16, borderWidth: 1, borderColor: '#145C9E' },
+  modalTitle: { fontSize: 18, fontWeight: '700', color: '#145C9E', marginBottom: 12, textAlign: 'center' },
+  modalItem: { paddingVertical: 12, paddingHorizontal: 8, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#e3e3e3' },
   modalItemText: { fontSize: 16, color: '#222' },
-  modalClose: {
-    marginTop: 10,
-    alignSelf: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderRadius: 10,
-    backgroundColor: '#145C9E',
-  },
+  modalClose: { marginTop: 10, alignSelf: 'center', paddingVertical: 10, paddingHorizontal: 16, borderRadius: 10, backgroundColor: '#145C9E' },
   modalCloseText: { color: '#fff', fontWeight: '700' },
+
+  // 🔵 Alert
+  alertCard: { width: '85%', backgroundColor: '#fff', borderRadius: 12, padding: 20, alignItems: 'center', borderWidth: 1, borderColor: '#145C9E' },
+  alertTitle: { fontSize: 18, fontWeight: '700', color: '#145C9E', marginBottom: 10 },
+  alertMessage: { fontSize: 16, color: '#333', textAlign: 'center', marginBottom: 15 },
+  alertButton: { backgroundColor: '#145C9E', borderRadius: 8, paddingHorizontal: 20, paddingVertical: 10 },
+  alertButtonText: { color: '#fff', fontWeight: '700', fontSize: 16 },
 });

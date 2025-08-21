@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import Onboarding1 from '../screens/Onboarding1';
 import Onboarding2 from '../screens/Onboarding2';
 import Onboarding3 from '../screens/Onboarding3';
@@ -7,6 +8,8 @@ import Onboarding4 from '../screens/Onboarding4';
 import Register from '../screens/Register';
 import Login from '../screens/Login';
 import CitySelect from '../screens/CitySelect';
+import RouteSelect from '../screens/RouteSelect';
+import RouteResult from '../screens/RouteResult';
 
 export type RootStackParamList = {
   Onboarding1: undefined;
@@ -16,7 +19,15 @@ export type RootStackParamList = {
   Register: undefined;
   Login: undefined;
   CitySelect: undefined;
+  RouteSelect: { selectedCity: string; selectedSystem: string };
+  RouteResult: {
+    startStation: string;
+    endStation: string;
+    selectedCity: string;
+    selectedSystem: string;
+  };
 };
+
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -30,6 +41,8 @@ export default function AppNavigator() {
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="CitySelect" component={CitySelect} />
+      <Stack.Screen name="RouteSelect" component={RouteSelect} />
+      <Stack.Screen name="RouteResult" component={RouteResult} />
     </Stack.Navigator>
   );
 }

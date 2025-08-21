@@ -93,7 +93,32 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/CMakeFiles/cmake.verify_globs")
 endif()
 
-# LIB_CUSTOM_SRCS at D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:22 (file)
+# react_codegen_SRCS at D:/PROJECT/raygo_app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/PROJECT/raygo_app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "D:/PROJECT/raygo_app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/rnreanimated-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at D:/PROJECT/raygo_app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/PROJECT/raygo_app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/*.cpp")
+set(OLD_GLOB
+  "D:/PROJECT/raygo_app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/ComponentDescriptors.cpp"
+  "D:/PROJECT/raygo_app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/EventEmitters.cpp"
+  "D:/PROJECT/raygo_app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/Props.cpp"
+  "D:/PROJECT/raygo_app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/ShadowNodes.cpp"
+  "D:/PROJECT/raygo_app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/States.cpp"
+  "D:/PROJECT/raygo_app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/rnreanimatedJSI-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/CMakeFiles/cmake.verify_globs")
+endif()
+
+# LIB_CUSTOM_SRCS at D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:12 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/*.cpp")
 set(OLD_GLOB
   )
@@ -102,7 +127,7 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/CMakeFiles/cmake.verify_globs")
 endif()
 
-# LIB_CUSTOM_SRCS at D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:22 (file)
+# LIB_CUSTOM_SRCS at D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:12 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/../../../../common/cpp/react/renderer/components/safeareacontext/*.cpp")
 set(OLD_GLOB
   "D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/../../../../common/cpp/react/renderer/components/safeareacontext/RNCSafeAreaViewShadowNode.cpp"
@@ -113,7 +138,7 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/CMakeFiles/cmake.verify_globs")
 endif()
 
-# LIB_CODEGEN_SRCS at D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:23 (file)
+# LIB_CODEGEN_SRCS at D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:13 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/*.cpp")
 set(OLD_GLOB
   "D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/safeareacontext-generated.cpp"
@@ -123,7 +148,7 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "D:/PROJECT/raygo_app/android/app/.cxx/Debug/1x4es4ax/x86/CMakeFiles/cmake.verify_globs")
 endif()
 
-# LIB_CODEGEN_SRCS at D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:23 (file)
+# LIB_CODEGEN_SRCS at D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:13 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/safeareacontext/*.cpp")
 set(OLD_GLOB
   "D:/PROJECT/raygo_app/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/safeareacontext/ComponentDescriptors.cpp"
