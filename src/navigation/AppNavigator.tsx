@@ -28,7 +28,6 @@ export type RootStackParamList = {
   };
 };
 
-
 const Stack = createStackNavigator<RootStackParamList>();
 
 export default function AppNavigator() {

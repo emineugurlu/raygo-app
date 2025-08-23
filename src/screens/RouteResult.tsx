@@ -1,14 +1,15 @@
 // src/screens/RouteResult.tsx
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigation/AppNavigator';
 import { COLORS } from '../constants/Styles';
 
 type Props = StackScreenProps<RootStackParamList, 'RouteResult'>;
 
-export default function RouteResult({ route }: Props) {
-  const { startStation, endStation } = route.params;
+export default function RouteResult({ navigation, route }: Props) {
+  // ⬇️ selectedCity ve selectedSystem'ı da al
+  const { startStation, endStation, selectedCity, selectedSystem } = route.params;
 
   const duration = 32;
   const transferCount = 1;
@@ -16,36 +17,48 @@ export default function RouteResult({ route }: Props) {
 
   return (
     <View style={styles.container}>
+      {/* 🔙 Geri Butonu */}
+      <TouchableOpacity
+        style={styles.backButton}
+        // ⬇️ RouteSelect parametre beklediği için ikisini de geri gönderiyoruz
+        onPress={() => navigation.navigate('RouteSelect', { selectedCity, selectedSystem })}
+        // Alternatif: sadece geri gitmek istersen => onPress={() => navigation.goBack()}
+      >
+        <View style={styles.chevronLeft} />
+      </TouchableOpacity>
+
       {/* Logo – sağ üst köşe */}
       <Image source={require('../../assets/logo.png')} style={styles.logo} />
 
-      {/* GIF animasyonu */}
+      {/* Tren GIF */}
       <Image
         source={require('../../assets/Tren-gif.gif')}
         style={styles.trainImage}
       />
 
+      {/* Mavi arka plan */}
       <View style={styles.headerCard}>
         <Text style={styles.headerText}>Rota Bilgileri</Text>
 
+        {/* Beyaz kart */}
         <View style={styles.infoCard}>
           <View style={styles.infoRow}>
-            <Text style={styles.emoji}>🚆</Text>
+            <Text style={styles.icon}>🚆</Text>
             <Text style={styles.infoText}>Başlangıç: {startStation}</Text>
           </View>
 
           <View style={styles.infoRow}>
-            <Text style={styles.emoji}>🏁</Text>
+            <Text style={styles.icon}>🚉</Text>
             <Text style={styles.infoText}>Bitiş: {endStation}</Text>
           </View>
 
           <View style={styles.infoRow}>
-            <Text style={styles.emoji}>⏱</Text>
+            <Text style={styles.icon}>⏱</Text>
             <Text style={styles.infoText}>Tahmini Süre: {duration} dk</Text>
           </View>
 
           <View style={styles.infoRow}>
-            <Text style={styles.emoji}>🔄</Text>
+            <Text style={styles.icon}>🔧</Text>
             <Text style={styles.infoText}>
               Aktarma: {transferCount} ({transferInfo})
             </Text>
@@ -59,7 +72,6 @@ export default function RouteResult({ route }: Props) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background, alignItems: 'center' },
 
-  // sağ üst logo
   logo: {
     position: 'absolute',
     top: 8,
@@ -70,43 +82,38 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
 
-  // tren gif – görseldeki gibi daha kompakt
   trainImage: {
-    width: 470,
-    height: 370,
-    marginTop: 64,
+    width: 360,
+    height: 360,
+    marginTop: 50,
+    marginRight: 10,
     resizeMode: 'contain',
   },
 
-  // mavi alan – üstü kavisli, aşağıya kadar iner
   headerCard: {
     flex: 1,
     width: '100%',
-    height:570,
     backgroundColor: '#0077b6',
-    borderTopLeftRadius: 65,
-    borderTopRightRadius: 65,
-    marginTop: 18,
+    borderTopLeftRadius: 55,
+    borderTopRightRadius: 55,
+    marginTop: 8,
     alignItems: 'center',
-    paddingTop: 16,
-    paddingBottom: 24,
+    paddingTop: 12,
+    paddingBottom: 20,
   },
 
   headerText: {
-    fontSize: 22,
+    fontSize: 25,
     fontWeight: 'bold',
     color: '#fff',
-    marginBottom: 12,
+    marginBottom: 90,
   },
 
-  // içteki beyaz kart – ekran görüntüsüne yakın görünüm
   infoCard: {
     backgroundColor: '#F0F0F0',
     borderRadius: 16,
-    padding: 18,
+    padding: 20,
     width: '85%',
-    marginTop: 86,
-    // hafif gölge
     elevation: 3,
     shadowColor: '#000',
     shadowOpacity: 0.12,
@@ -114,7 +121,28 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 3 },
   },
 
-  infoRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
-  emoji: { fontSize: 18, marginRight: 8 },
-  infoText: { fontSize: 16, color: '#555' },
+  infoRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 14 },
+
+  icon: { fontSize: 20, marginRight: 10, color: '#888888' },
+  infoText: { fontSize: 18, color: '#888888', fontWeight: '600' },
+
+  // 🔙 Geri butonu
+  backButton: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    zIndex: 10,
+    width: 32,
+    height: 32,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  chevronLeft: {
+    width: 14,
+    height: 14,
+    borderLeftWidth: 3,
+    borderBottomWidth: 3,
+    borderColor: '#1c6ba4',
+    transform: [{ rotate: '45deg' }],
+  },
 });

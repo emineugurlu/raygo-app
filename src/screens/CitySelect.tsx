@@ -24,7 +24,6 @@ export default function CitySelect({ navigation }: Props) {
   const [cityOpen, setCityOpen] = useState(false);
   const [systemOpen, setSystemOpen] = useState(false);
 
-  // 🔵 Custom Alert state
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
 
@@ -41,28 +40,20 @@ export default function CitySelect({ navigation }: Props) {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Geri */}
-      <TouchableOpacity
-        style={styles.backButton}
-        onPress={() => navigation.navigate('Login')}
-      >
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Login')}>
         <View style={styles.chevronLeft} />
       </TouchableOpacity>
 
-      {/* Dekor kareler */}
       <View style={styles.topLeftSquares}>
         <View style={[styles.square, styles.squareLarge, { backgroundColor: '#0D2B45', marginRight: 15, marginBottom: 25 }]} />
         <View style={[styles.square, styles.squareMedium, { backgroundColor: '#145C9E', marginLeft: -40 }]} />
         <View style={[styles.square, styles.squareSmall, { backgroundColor: '#0D2B45', marginLeft: -20 }]} />
       </View>
 
-      {/* Logo */}
       <Image source={require('../../assets/logo.png')} style={styles.logo} />
 
-      {/* İçerik */}
       <View style={styles.content}>
-        {/* Şehir */}
-        <TouchableOpacity style={styles.pickerWrapper} onPress={() => setCityOpen(true)} activeOpacity={0.8}>
+        <TouchableOpacity style={styles.pickerWrapper} activeOpacity={0.8} onPress={() => setCityOpen(true)}>
           <Text style={styles.icon}>🏙</Text>
           <Text style={[styles.pickerText, !selectedCity && styles.placeholderText]}>
             {selectedCity || 'Şehir Seçiniz'}
@@ -70,8 +61,7 @@ export default function CitySelect({ navigation }: Props) {
           {renderArrow()}
         </TouchableOpacity>
 
-        {/* Sistem */}
-        <TouchableOpacity style={[styles.pickerWrapper, { marginTop: 20 }]} onPress={() => setSystemOpen(true)} activeOpacity={0.8}>
+        <TouchableOpacity style={[styles.pickerWrapper, { marginTop: 20 }]} activeOpacity={0.8} onPress={() => setSystemOpen(true)}>
           <Text style={styles.icon}>🚆</Text>
           <Text style={[styles.pickerText, !selectedSystem && styles.placeholderText]}>
             {selectedSystem || 'Sistem Seçiniz'}
@@ -79,13 +69,11 @@ export default function CitySelect({ navigation }: Props) {
           {renderArrow()}
         </TouchableOpacity>
 
-        {/* Devam */}
         <TouchableOpacity style={styles.button} onPress={handleContinue}>
           <Text style={styles.buttonText}>Devam Et →</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Alt dekor */}
       <View style={styles.bottomRightSquares}>
         <View style={[styles.square, styles.squareLarge, { backgroundColor: '#145C9E' }]} />
         <View style={[styles.square, styles.squareMedium, { backgroundColor: '#0D2B45', marginRight: -20, marginTop: 40 }]} />
@@ -130,7 +118,7 @@ export default function CitySelect({ navigation }: Props) {
         </View>
       </Modal>
 
-      {/* 🔵 Mavi Uyarı Modal */}
+      {/* Mavi Alert */}
       <Modal visible={alertVisible} transparent animationType="fade" onRequestClose={() => setAlertVisible(false)}>
         <View style={styles.alertBackdrop}>
           <View style={styles.alertCard}>
@@ -163,11 +151,9 @@ const styles = StyleSheet.create({
   arrowDown: { width: 0, height: 0, marginLeft: 4, borderLeftWidth: 6, borderRightWidth: 6, borderTopWidth: 8, borderLeftColor: 'transparent', borderRightColor: 'transparent', borderTopColor: '#145C9E' },
   button: { backgroundColor: '#0077B6', paddingVertical: 12, borderRadius: 25, marginTop: 80, alignItems: 'center', elevation: 3 },
   buttonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
-
   backButton: { position: 'absolute', top: 20, left: 20, zIndex: 10, width: 32, height: 32, justifyContent: 'center', alignItems: 'center' },
   chevronLeft: { width: 12, height: 12, borderLeftWidth: 3, borderBottomWidth: 3, borderColor: '#1c6ba4', transform: [{ rotate: '45deg' }] },
 
-  // Liste modalları
   modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.25)', justifyContent: 'center', alignItems: 'center', paddingHorizontal: 24 },
   modalCard: { width: '100%', maxHeight: '70%', backgroundColor: '#fff', borderRadius: 16, padding: 16, borderWidth: 1, borderColor: '#145C9E' },
   modalTitle: { fontSize: 18, fontWeight: '700', color: '#145C9E', marginBottom: 12, textAlign: 'center' },
@@ -176,7 +162,6 @@ const styles = StyleSheet.create({
   modalClose: { marginTop: 10, alignSelf: 'center', paddingVertical: 10, paddingHorizontal: 16, borderRadius: 10, backgroundColor: '#145C9E' },
   modalCloseText: { color: '#fff', fontWeight: '700' },
 
-  // 🔵 Custom Alert stilleri
   alertBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.35)', justifyContent: 'center', alignItems: 'center' },
   alertCard: { width: '85%', backgroundColor: '#fff', borderRadius: 12, padding: 20, alignItems: 'center', borderWidth: 1, borderColor: '#145C9E' },
   alertTitle: { fontSize: 18, fontWeight: '700', color: '#145C9E', marginBottom: 10 },
