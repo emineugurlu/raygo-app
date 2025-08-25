@@ -82,6 +82,16 @@ rule CXX_COMPILER__react_codegen_rngesturehandler_codegen_Debug
 #############################################
 # Rule for compiling CXX files.
 
+rule CXX_COMPILER__react_codegen_RNMapsSpecs_Debug
+  depfile = $DEP_FILE
+  deps = gcc
+  command = C:\Users\ugurl\AppData\Local\Android\Sdk\ndk\27.1.12297006\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=armv7-none-linux-androideabi24 --sysroot=C:/Users/ugurl/AppData/Local/Android/Sdk/ndk/27.1.12297006/toolchains/llvm/prebuilt/windows-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for compiling CXX files.
+
 rule CXX_COMPILER__react_codegen_rnreanimated_Debug
   depfile = $DEP_FILE
   deps = gcc

@@ -10,6 +10,8 @@ import Login from '../screens/Login';
 import CitySelect from '../screens/CitySelect';
 import RouteSelect from '../screens/RouteSelect';
 import RouteResult from '../screens/RouteResult';
+import MapTest from '../screens/MapTest';
+import Places from '../screens/Places';
 
 export type RootStackParamList = {
   Onboarding1: undefined;
@@ -26,6 +28,8 @@ export type RootStackParamList = {
     selectedCity: string;
     selectedSystem: string;
   };
+  MapTest: undefined;
+  Places: { endCoord?: { latitude: number; longitude: number }, endName?: string } | undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -42,6 +46,8 @@ export default function AppNavigator() {
       <Stack.Screen name="CitySelect" component={CitySelect} />
       <Stack.Screen name="RouteSelect" component={RouteSelect} />
       <Stack.Screen name="RouteResult" component={RouteResult} />
+      <Stack.Screen name="MapTest" component={MapTest} />
+      <Stack.Screen name="Places" component={Places} />
     </Stack.Navigator>
   );
 }

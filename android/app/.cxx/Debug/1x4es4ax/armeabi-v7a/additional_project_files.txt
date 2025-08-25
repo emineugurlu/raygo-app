@@ -12,6 +12,13 @@ D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\rngesturehandle
 D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\rngesturehandler_codegen_autolinked_build\CMakeFiles\react_codegen_rngesturehandler_codegen.dir\react\renderer\components\rngesturehandler_codegen\States.cpp.o
 D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\rngesturehandler_codegen_autolinked_build\CMakeFiles\react_codegen_rngesturehandler_codegen.dir\bac033cd950586cef66695376748dd33\rngesturehandler_codegenJSI-generated.cpp.o
 D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\rngesturehandler_codegen_autolinked_build\CMakeFiles\react_codegen_rngesturehandler_codegen.dir\rngesturehandler_codegen-generated.cpp.o
+D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\RNMapsSpecs_autolinked_build\CMakeFiles\react_codegen_RNMapsSpecs.dir\RNMapsSpecs-generated.cpp.o
+D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\RNMapsSpecs_autolinked_build\CMakeFiles\react_codegen_RNMapsSpecs.dir\react\renderer\components\RNMapsSpecs\ComponentDescriptors.cpp.o
+D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\RNMapsSpecs_autolinked_build\CMakeFiles\react_codegen_RNMapsSpecs.dir\react\renderer\components\RNMapsSpecs\EventEmitters.cpp.o
+D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\RNMapsSpecs_autolinked_build\CMakeFiles\react_codegen_RNMapsSpecs.dir\react\renderer\components\RNMapsSpecs\Props.cpp.o
+D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\RNMapsSpecs_autolinked_build\CMakeFiles\react_codegen_RNMapsSpecs.dir\react\renderer\components\RNMapsSpecs\RNMapsSpecsJSI-generated.cpp.o
+D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\RNMapsSpecs_autolinked_build\CMakeFiles\react_codegen_RNMapsSpecs.dir\react\renderer\components\RNMapsSpecs\ShadowNodes.cpp.o
+D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\RNMapsSpecs_autolinked_build\CMakeFiles\react_codegen_RNMapsSpecs.dir\react\renderer\components\RNMapsSpecs\States.cpp.o
 D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\rnreanimated_autolinked_build\CMakeFiles\react_codegen_rnreanimated.dir\react\renderer\components\rnreanimated\ComponentDescriptors.cpp.o
 D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\rnreanimated_autolinked_build\CMakeFiles\react_codegen_rnreanimated.dir\react\renderer\components\rnreanimated\EventEmitters.cpp.o
 D:\PROJECT\raygo_app\android\app\.cxx\Debug\1x4es4ax\armeabi-v7a\rnreanimated_autolinked_build\CMakeFiles\react_codegen_rnreanimated.dir\react\renderer\components\rnreanimated\Props.cpp.o

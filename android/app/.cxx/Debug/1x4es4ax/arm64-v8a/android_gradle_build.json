@@ -3,6 +3,7 @@
     "D:\\PROJECT\\raygo_app\\node_modules\\@react-native-async-storage\\async-storage\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
     "D:\\PROJECT\\raygo_app\\node_modules\\@react-native-picker\\picker\\android\\src\\main\\jni\\CMakeLists.txt",
     "D:\\PROJECT\\raygo_app\\node_modules\\react-native-gesture-handler\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
+    "D:\\PROJECT\\raygo_app\\node_modules\\react-native-maps\\android\\src\\main\\jni\\CMakeLists.txt",
     "D:\\PROJECT\\raygo_app\\node_modules\\react-native-reanimated\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
     "D:\\PROJECT\\raygo_app\\node_modules\\react-native-safe-area-context\\android\\src\\main\\jni\\CMakeLists.txt",
     "D:\\PROJECT\\raygo_app\\node_modules\\react-native-screens\\android\\src\\main\\jni\\CMakeLists.txt",
@@ -37,6 +38,11 @@
         "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\jsi\\libs\\android.arm64-v8a\\libjsi.so",
         "C:\\Users\\ugurl\\.gradle\\caches\\8.14.1\\transforms\\ac4ebaf754dc18b487a31e43e5e3e9d1\\transformed\\react-android-0.80.2-debug\\prefab\\modules\\reactnative\\libs\\android.arm64-v8a\\libreactnative.so"
       ]
+    },
+    "react_codegen_RNMapsSpecs::@5748abef1962d24942ec": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "react_codegen_RNMapsSpecs"
     },
     "react_codegen_RNVectorIconsSpec::@479809fae146501fd34d": {
       "toolchain": "toolchain",

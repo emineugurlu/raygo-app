@@ -4,6 +4,7 @@ export const COLORS = {
   text: '#03045E',
   button: '#0077B6',
   white: '#FFFFFF',
+  primaryBlue: '#0077B6',
 } as const;
 
 export const FONTS = {

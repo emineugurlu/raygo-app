@@ -5,6 +5,7 @@ import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigation/AppNavigator';
 import { COLORS } from '../constants/Styles';
 
+
 type Props = StackScreenProps<RootStackParamList, 'RouteResult'>;
 
 export default function RouteResult({ navigation, route }: Props) {
@@ -64,12 +65,18 @@ export default function RouteResult({ navigation, route }: Props) {
           </View>
 
           {/* 🔵 Gezilecek Yerler Butonu */}
-          <TouchableOpacity
-            style={styles.placesButton}
-            //onPress={() => navigation.navigate('Places')}
-          >
-            <Text style={styles.placesButtonText}>Gezilecek Yerler</Text>
-          </TouchableOpacity>
+         <TouchableOpacity
+  style={styles.placesButton}
+  onPress={() =>
+  navigation.navigate('Places', {
+    endCoord: { latitude: 41.0589, longitude: 28.9873 },
+    endName: endStation || 'Varış',
+  })
+}
+
+>
+  <Text style={styles.placesButtonText}>Gezilecek Yerler</Text>
+</TouchableOpacity>
         </View>
       </View>
     </View>
