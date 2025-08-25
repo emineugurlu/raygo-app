@@ -8,7 +8,6 @@ import { COLORS } from '../constants/Styles';
 type Props = StackScreenProps<RootStackParamList, 'RouteResult'>;
 
 export default function RouteResult({ navigation, route }: Props) {
-  // ⬇️ selectedCity ve selectedSystem'ı da al
   const { startStation, endStation, selectedCity, selectedSystem } = route.params;
 
   const duration = 32;
@@ -20,9 +19,9 @@ export default function RouteResult({ navigation, route }: Props) {
       {/* 🔙 Geri Butonu */}
       <TouchableOpacity
         style={styles.backButton}
-        // ⬇️ RouteSelect parametre beklediği için ikisini de geri gönderiyoruz
-        onPress={() => navigation.navigate('RouteSelect', { selectedCity, selectedSystem })}
-        // Alternatif: sadece geri gitmek istersen => onPress={() => navigation.goBack()}
+        onPress={() =>
+          navigation.navigate('RouteSelect', { selectedCity, selectedSystem })
+        }
       >
         <View style={styles.chevronLeft} />
       </TouchableOpacity>
@@ -63,6 +62,14 @@ export default function RouteResult({ navigation, route }: Props) {
               Aktarma: {transferCount} ({transferInfo})
             </Text>
           </View>
+
+          {/* 🔵 Gezilecek Yerler Butonu */}
+          <TouchableOpacity
+            style={styles.placesButton}
+            //onPress={() => navigation.navigate('Places')}
+          >
+            <Text style={styles.placesButtonText}>Gezilecek Yerler</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -144,5 +151,24 @@ const styles = StyleSheet.create({
     borderBottomWidth: 3,
     borderColor: '#1c6ba4',
     transform: [{ rotate: '45deg' }],
+  },
+
+  // 🔵 Gezilecek Yerler butonu
+  placesButton: {
+    marginTop: 20,
+    backgroundColor: '#0077b6', // MAVİ renk
+    paddingVertical: 14,
+    borderRadius: 12,
+    alignItems: 'center',
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    shadowOffset: { width: 0, height: 3 },
+  },
+  placesButtonText: {
+    color: '#fff',
+    fontSize: 17,
+    fontWeight: '700',
   },
 });
