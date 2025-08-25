@@ -17,6 +17,7 @@ import { COLORS, FONT_WEIGHTS } from '../constants/Styles';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigation/AppNavigator';
 
+
 const STATIONS = [
   { id: 'yenikapi', name: 'Yenikapı' },
   { id: 'aksaray', name: 'Aksaray' },
