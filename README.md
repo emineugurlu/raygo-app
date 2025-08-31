@@ -202,3 +202,29 @@ git commit -m "Add new feature"
 git push origin feature/your-feature
 ````
 5.Open a Pull Request 🎉
+
+### 4. Screenshot
+
+<img width="439" height="1016" alt="Ekran görüntüsü 2025-08-31 193410" src="https://github.com/user-attachments/assets/919d13cb-df33-478b-b836-dbbe55db5237" />
+<img width="442" height="1013" alt="Ekran görüntüsü 2025-08-31 193422" src="https://github.com/user-attachments/assets/83dd2ab1-d0b5-44f6-b3b4-515a2a2d9373" />
+<img width="445" height="1014" alt="Ekran görüntüsü 2025-08-31 193436" src="https://github.com/user-attachments/assets/8cb5c0b3-caea-4401-8c0a-7e437ddaf9a6" />
+<img width="445" height="1009" alt="Ekran görüntüsü 2025-08-31 193444" src="https://github.com/user-attachments/assets/2681eee3-c0ae-4d3b-9b41-6909598a09ec" />
+<img width="443" height="1012" alt="Ekran görüntüsü 2025-08-31 193456" src="https://github.com/user-attachments/assets/9c0c4ae9-118d-4315-8901-17fa41458e43" />
+<img width="448" height="1009" alt="Ekran görüntüsü 2025-08-31 193506" src="https://github.com/user-attachments/assets/6df9060d-44bf-4a16-be11-b3a83edd8eeb" />
+<img width="444" height="1012" alt="Ekran görüntüsü 2025-08-31 193519" src="https://github.com/user-attachments/assets/7bb4d581-2c26-49a0-b151-2bf729da2011" />
+<img width="444" height="1016" alt="Ekran görüntüsü 2025-08-31 195616" src="https://github.com/user-attachments/assets/15e81b6c-0f1a-4a19-9a3b-3c8a7502f302" />
+<img width="443" height="1012" alt="Ekran görüntüsü 2025-08-31 195630" src="https://github.com/user-attachments/assets/1fc8bddd-1253-4ed8-ac34-f10cfb511b1f" />
+<img width="445" height="1014" alt="Ekran görüntüsü 2025-08-31 195639" src="https://github.com/user-attachments/assets/5327ae1c-f346-4db0-b527-7a7defd56c7d" />
+<img width="440" height="1008" alt="Ekran görüntüsü 2025-08-31 195649" src="https://github.com/user-attachments/assets/01cc8d47-901a-44ce-9974-b672b52c8853" />
+<img width="444" height="1012" alt="Ekran görüntüsü 2025-08-31 195657" src="https://github.com/user-attachments/assets/5d016d80-c5ed-49f4-85c4-5dc81a2dcee0" />
+<img width="442" height="1009" alt="Ekran görüntüsü 2025-08-31 195706" src="https://github.com/user-attachments/assets/0683172e-15c3-4fd1-b978-62a68822b1e2" />
+<img width="441" height="1009" alt="Ekran görüntüsü 2025-08-31 195715" src="https://github.com/user-attachments/assets/da1addf5-e922-4e16-957e-4bb9fe073bae" />
+<img width="445" height="1009" alt="Ekran görüntüsü 2025-08-31 195728" src="https://github.com/user-attachments/assets/dd2ee73b-655f-4637-a8d4-ea3dfce325b9" />
+<img width="447" height="1011" alt="Ekran görüntüsü 2025-08-31 195842" src="https://github.com/user-attachments/assets/146e4950-20a8-4ac2-af01-559743868ca6" />
+
+
+
+
+
+
+
