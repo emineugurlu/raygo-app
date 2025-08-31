@@ -64,4 +64,65 @@ RAYGO_APP/
 ```bash
 git clone https://github.com/emineugurlu/raygo-app
 cd raygo-app
+```
+---
+
+### 2.Install dependencies
+
+npm install
+# or
+yarn install
+
+### 3. Firebase setup
+
+In Firebase Console, enable Email/Password in Authentication.
+
+Create a Firestore database.
+
+Download google-services.json → place it in android/app/
+
+Download GoogleService-Info.plist → place it in ios/
+
+Update src/services/firebase.js with your config if needed.
+
+### . Google Maps/Places API keys
+
+⚠️ Important: API keys are not stored in this repo.
+They must be configured locally.
+
+Android
+In android/app/src/main/AndroidManifest.xml:
+<meta-data
+  android:name="com.google.android.geo.API_KEY"
+  android:value="${GOOGLE_MAPS_API_KEY}" />
+  
+In android/app/build.gradle:
+defaultConfig {
+    ...
+    manifestPlaceholders = [
+        GOOGLE_MAPS_API_KEY: project.hasProperty("MAPS_API_KEY") ? MAPS_API_KEY : ""
+    ]
+}
+
+Local android/local.properties (ignored by git):
+MAPS_API_KEY=AIzaSy...yourKey...
+
+In ios/<AppName>/Info.plist:
+<key>GOOGLE_MAPS_API_KEY</key>
+<string>$(GOOGLE_MAPS_API_KEY)</string>
+
+In ios/Config/Debug.xcconfig / Release.xcconfig (gitignored):
+GOOGLE_MAPS_API_KEY = AIzaSy...yourKey...
+
+Places (REST API)
+
+Add to .env (gitignored):
+GOOGLE_PLACES_API_KEY=AIzaSy...yourKey...
+
+▶️ Running the App
+
+Start Metro Bundler:
+
+
+
 
