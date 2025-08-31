@@ -52,10 +52,7 @@ RAYGO_APP/
 ### 1. Clone the repo
 ```bash
 git clone https://github.com/emineugurlu/raygo-app
-cd raygo-app
-npm install
-# or
-yarn install
+cd raygo-ap
 
 
 ## 📂 Project Structure
