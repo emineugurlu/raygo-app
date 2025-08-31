@@ -122,7 +122,71 @@ GOOGLE_PLACES_API_KEY=AIzaSy...yourKey...
 ▶️ Running the App
 
 Start Metro Bundler:
+````
+npx react-native start
+````
+Run on Android:
+````
+npx react-native run-android
+````
+Run on iOS (macOS only):
+````
+cd ios && pod install && cd ..
+npx react-native run-ios
 
+````
 
+🧰 Troubleshooting
 
+EADDRINUSE: 8081 already in use
+````
+taskkill /F /IM node.exe   # Windows
+# or start Metro on another port:
+npx react-native start --port 8082 --reset-cache
+````
+No online devices / emulator offline
+````
+adb kill-server && adb start-server && adb devices
+````
+If still offline → Android Studio → Device Manager → Cold Boot Now
 
+[firestore/unavailable]
+
+  Check internet connection in emulator
+
+  Ensure google-services.json is correct
+
+  Check Firebase console for project setup
+
+auth/wrong-password / invalid-credential
+
+  Verify email/password match
+
+permission-denied
+
+  Update Firestore Rules accordingly
+
+🔑 API Key Security
+
+This repo does not contain any API keys.
+The following files must be ignored:
+````
+.env
+.env.*
+android/local.properties
+ios/Config/*.xcconfig
+android/app/google-services.json
+ios/**/GoogleService-Info.plist
+````
+🛣️ Roadmap / TODO
+
+ Add full Istanbul metro lines & stations dataset
+ Implement route calculation (duration, transfers)
+ Add backend/proxy for Places API (hide keys from client)
+ Localization (TR/EN)
+ Analytics, Crashlytics, automated tests
+ iOS build documentation
+👥 Contributing
+
+ Fork this repo
+ Create a new branch:
