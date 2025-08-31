@@ -1,6 +1,6 @@
 # 🚇 Raygo – Rail System Guide Mobile App
 
-**Raygo** is an open-source mobile application designed as a **rail system guide**, initially focusing on Istanbul metro lines, with plans to expand to other cities.  
+**Raygo** is an open-source mobile application designed as a **rail system guide**, initially focusing on Istanbul metro lines, with plans to expand to other rail systems and cities.  
 It is built with **React Native (CLI) + TypeScript**, and integrates **Firebase Authentication/Firestore**, **Google Maps SDK**, and optionally **Google Places API**.
 
 ---
@@ -10,7 +10,7 @@ It is built with **React Native (CLI) + TypeScript**, and integrates **Firebase 
 - 📱 **Onboarding flow** (`Onboarding1–4.tsx`)
 - 🔐 **Register / Login** (Firebase Auth + Firestore)
   - Gmail-only registration
-  - Strong password policy (min. 8 chars, A-Z, a-z, 0-9, special)
+  - Strong password policy (min. 8 chars, A-Z, a-z, 0-9, special character)
   - Privacy policy agreement required
 - 🗺️ **City selection** (`CitySelect.tsx`) and **route screens** (`RouteSelect.tsx`, `RouteResult.tsx`)
 - 📍 **Places screen** (`Places.tsx`) with Google Places API integration
@@ -43,7 +43,18 @@ RAYGO_APP/
 │ └── services/ # Firebase initialization
 ├── App.tsx
 ├── index.js
+└── README.md
 
+
+---
+
+## 🔧 Prerequisites
+
+- Node.js 18+
+- Java 17 (for Android)
+- Android Studio + SDK/Emulator
+- Xcode (for iOS, on macOS)
+- Firebase project (Auth + Firestore enabled)
 
 ---
 
@@ -52,8 +63,5 @@ RAYGO_APP/
 ### 1. Clone the repo
 ```bash
 git clone https://github.com/emineugurlu/raygo-app
-cd raygo-ap
-
-
-## 📂 Project Structure
+cd raygo-app
 
