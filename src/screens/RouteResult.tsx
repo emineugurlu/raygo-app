@@ -13,7 +13,7 @@ export default function RouteResult({ navigation, route }: Props) {
 
   const duration = 32;
   const transferCount = 1;
-  const transferInfo = 'Kızılay';
+  const transferInfo = 'M7';
 
   return (
     <View style={styles.container}>
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
   infoRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 14 },
 
   icon: { fontSize: 20, marginRight: 10, color: '#888888' },
-  infoText: { fontSize: 18, color: '#888888', fontWeight: '600' },
+  infoText: { fontSize: 18, color: '#03045E', fontWeight: '600' },
 
   // 🔙 Geri butonu
   backButton: {
