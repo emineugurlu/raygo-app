@@ -188,5 +188,17 @@ ios/**/GoogleService-Info.plist
  iOS build documentation
 👥 Contributing
 
- Fork this repo
- Create a new branch:
+ 1.Fork this repo
+ 2.Create a new branch:
+````
+git checkout -b feature/your-feature
+````
+3.Commit changes:
+````
+git commit -m "Add new feature"
+````
+4.Push branch:
+````
+git push origin feature/your-feature
+````
+5.Open a Pull Request 🎉
