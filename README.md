@@ -5,7 +5,7 @@
 ![Framework](https://img.shields.io/badge/Framework-React%20Native%20CLI-61dafb?style=for-the-badge&logo=react)
 ![Language](https://img.shields.io/badge/Language-TypeScript-3178c6?style=for-the-badge&logo=typescript)
 ![Backend](https://img.shields.io/badge/Backend-Firebase-ffca28?style=for-the-badge&logo=firebase)
-![Platform](https://img.shields.io/badge/Platform-iOS%20%26%20Android-black?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Android-black?style=for-the-badge)
 
 Raygo is more than a transit app; it is a scalable framework for urban mobility. Initially focused on Istanbul’s complex metro network, it utilizes a robust **React Native** architecture to provide seamless navigation, location-based services, and secure user management. 
 
