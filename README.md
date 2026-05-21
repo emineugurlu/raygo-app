@@ -1,4 +1,4 @@
-# 🚇 Raygo: Intelligent Rail System Guide & Urban Navigator
+# 🚇 Raygo: Intelligent Rail System Guide & Urban Navigato
 
 > **"A high-performance, open-source mobile ecosystem designed to simplify urban rail transit. Built with React Native CLI and TypeScript, Raygo integrates real-time geospatial data with secure cloud infrastructure."**
 
